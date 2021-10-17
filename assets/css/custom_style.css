@@ -1,0 +1,61 @@
+.custom-navbar-brand img{
+	height: 80px !important;
+	width: 80px !important;
+}
+
+.custom-navbar-brand p{
+	font-size: 15px !important;
+	line-height: 18px !important;
+}
+
+.custom-bg-primary{
+	background-color: #069758 !important;
+}
+
+.custom-dropdown-menu{
+	border-radius: 0px !important;
+	background-color: rgba(255,255,255,0.6);
+	box-shadow: 3px 10px 5px;
+}
+
+.custom-bg-oldgreen{
+	background-color: #23462E !important;
+}
+
+.custom-bg-outline-oldgreen{
+	border-bottom: 1px solid #23462E !important;
+}
+
+.custom-text-oldgreen{
+	color: #23462E !important;
+}
+
+.carousel-item img{
+	object-fit: cover;
+	object-position: center;
+	width: 100vh;
+}
+
+.custom-hover-primary-text:hover{
+	color:#069758 !important;
+}
+
+.custom-hover-white-text:hover{
+	color:#fff !important;
+}
+
+.custom-hover-bg-oldgreen:hover{
+	background-color: #23462E !importan;
+}
+
+.text-underline{
+	text-decoration: underline;
+}
+.footer-logo{
+	font-size: 35px;
+}
+@media (max-width: 576px) {
+	.navbar-collapse{
+		background-color: #069758 !important;
+	}
+}

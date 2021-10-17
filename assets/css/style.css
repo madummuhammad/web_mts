@@ -10387,7 +10387,7 @@ header .navbar-bottom .navbar-toggler {
   z-index: 99;
   top: 0;
   left: 0;
-  background: #032a63;
+  background: #069758;
   transition: top 3s;
   box-shadow: none;
   -webkit-transition: all 0.5s ease-out;
@@ -10788,7 +10788,7 @@ footer .footer-top .count {
 
 footer .footer-bottom {
   padding: 24px 0 48px 0;
-  background: #032a63;
+  background: #23462E;
 }
 
 .error-wrap {

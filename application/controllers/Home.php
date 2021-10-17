@@ -9,5 +9,4 @@ class Home extends CI_Controller {
 		$this->load->view('website/page/v_home');
 		$this->load->view('website/partial/footer');
 	}
-
 }
