@@ -44,7 +44,7 @@
                                             </div>
                                         </div> -->
                                         <div class="text-center">
-                                            <button id="coba" type="button" class="btn btn-primary btn-block">Login</button>
+                                            <button id="submit-login" type="button" class="btn btn-primary btn-block">Login</button>
                                         </div>
                                     </form>
                                 </div>
@@ -68,7 +68,7 @@
         <script src="<?php echo base_url('assets/admin')?>/vendor/sweetalert2/dist/sweetalert2.min.js"></script>
         <script src="<?php echo base_url('assets/admin')?>/js/plugins-init/sweetalert.init.js"></script>
         <script>
-            $("#coba").on('click',function(){
+            $("#submit-login").on('click',function(){
                 const username=$("form input[name=username]").val();
                 const password=$("form input[name=password]").val();
                 $.ajax({
@@ -81,30 +81,27 @@
                     dataType:'json',
                     success: function(data){
                         if (data=='Gagal') {
-                         Swal({
+                           Swal({
                             title: "Gagal Login",
                             text: "Silakan Masukan username dan Password Dengan Benar",
                             type:'warning',
                             timer: 1e3, showConfirmButton: !1 
                         });
-                     } else {
+                       } else {
                         Swal({
                             title: "Berhasil Login",
                             text: "Mohon tunggu sebentar",
                             type:'success',
                             timer: 2e3, showConfirmButton: !1 
                         });
-                        window.location.href="<?php echo base_url('adminsystem') ?>";
+                        setTimeout(function (){
+                            window.location.href="<?php echo base_url('adminsystem') ?>";
+                        }, 1000);
                     }
                 }
             });
-            //   Swal({
-            //     title:'Hello Word',
-            //     text:'coba',
-            //     type:'warning'
-            // })
-        });
-    </script>
-</body>
+            });
+        </script>
+    </body>
 
-</html>
+    </html>

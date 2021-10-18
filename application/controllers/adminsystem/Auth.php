@@ -17,4 +17,9 @@ class Auth extends CI_Controller {
 	{
 		$this->M_Auth->login();
 	}
+
+	public function logout()
+	{
+		$this->M_Auth->logout();
+	}
 }

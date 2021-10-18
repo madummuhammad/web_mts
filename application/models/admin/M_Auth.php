@@ -30,4 +30,9 @@ class M_Auth extends CI_Model {
 			echo json_encode('Gagal');
 		}
 	}
+
+	public function logout()
+	{
+		session_destroy();
+	}
 }
