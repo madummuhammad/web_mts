@@ -44,6 +44,14 @@
         <script src="<?php echo base_url('assets/admin')?>/vendor/sweetalert2/dist/sweetalert2.min.js"></script>
         <script src="<?php echo base_url('assets/admin')?>/js/plugins-init/sweetalert.init.js"></script>
         <!-- End of sweet alert -->
+
+        <!-- Datatable -->
+        <script src="<?php echo base_url('assets/admin')?>/vendor/datatables/js/jquery.dataTables.min.js"></script>
+        <script src="<?php echo base_url('assets/admin')?>/js/plugins-init/datatables.init.js"></script>
+        <!-- Summernote -->
+        <script src="<?php echo base_url('assets/admin')?>/vendor/summernote/js/summernote.min.js"></script>
+        <!-- Summernote init -->
+        <script src="<?php echo base_url('assets/admin')?>/js/plugins-init/summernote-init.js"></script>
         <script>
             $("#btn-logout").on('click',function(){
                 $.ajax({
@@ -61,6 +69,10 @@
                         }, 1000);
                     }
                 });
+            });
+
+            $("#submit-kirim-artikel").on('click',function(){
+                alert(<?php echo date('Y') ?>)
             });
         </script>
 

@@ -3,11 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class M_Auth extends CI_Model {
 
-	public function index()
-	{
-		$this->load->view('admin/v_login');
-	}
-
 	public function login()
 	{
 		$username=$this->input->post('username');

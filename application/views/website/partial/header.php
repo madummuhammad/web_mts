@@ -14,7 +14,7 @@
 	<link rel="stylesheet" href="<?php echo base_url()?>assets/vendors/aos/dist/aos.css/aos.css" />
 
 	<!-- End plugin css for this page -->
-	<!-- <link rel="shortcut icon" href="<?php echo base_url()?>assets/images/favicon.png" /> -->
+	<link rel="shortcut icon" href="<?php echo base_url()?>assets/images/upload/logo_mts.png" />
 
 	<!-- inject:css -->
 	<link rel="stylesheet" href="<?php echo base_url()?>assets/css/style.css">
