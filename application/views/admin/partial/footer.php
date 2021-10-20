@@ -3,7 +3,7 @@
             ***********************************-->
             <div class="footer">
                 <div class="copyright">
-                    <p>Copyright © Designed &amp; Developed by <a href="#" target="_blank">Quixkit</a> 2019</p>
+                    <p>Copyright © MTs AT TAQWA JATINGARANG &amp; Developed by Muhammad Ma'dum <?= date('Y') ?></p>
                 </div>
             </div>
         <!--**********************************
@@ -207,12 +207,134 @@ for (let i = 0; i < button_modal.length; i++) {
                     setTimeout(function (){
                         window.location.href="<?php echo base_url('adminsystem/artikel') ?>";
                     }, 1000);
-                }
+                },
             });
         })
 
     }
 }
+// End of hapus artikel
+
+// Edit profile madrasah
+$("#submit-edit-profile-madrasah").on('click',function(){
+    var nama_madrasah=$("#edit-profile-madrasah .tab-pane input[name=nama_madrasah]").val();
+    var no_statistik=$("#edit-profile-madrasah .tab-pane input[name=no_statistik]").val();
+    var npsn=$("#edit-profile-madrasah .tab-pane input[name=npsn]").val();
+    var alamat=$("#edit-profile-madrasah .tab-pane textarea[name=alamat]").val();
+    var tahun_berdiri=$("#edit-profile-madrasah .tab-pane input[name=tahun_berdiri]").val();
+    var status=$("#edit-profile-madrasah .tab-pane input[name=status]").val();
+    var terakreditasi=$("#edit-profile-madrasah .tab-pane input[name=terakreditasi]").val();
+    var nama_kepala=$("#edit-profile-madrasah .tab-pane input[name=nama_kepala]").val();
+    var tmt=$("#edit-profile-madrasah .tab-pane input[name=tmt]").val();
+    $.ajax({
+        url: "<?php echo base_url('adminsystem/profile_madrasah/edit_profile') ?>",
+        type:'POST',
+        data:{
+            nama_madrasah:nama_madrasah,
+            no_statistik:no_statistik,
+            npsn:npsn,
+            alamat:alamat,
+            tahun_berdiri:tahun_berdiri,
+            status:status,
+            terakreditasi:terakreditasi,
+            nama_kepala:nama_kepala,
+            tmt:tmt
+        },
+        success: function(data){
+            Swal({
+                title: "Artikel Berhasil Diedit",
+                text: "Mohon tunggu sebentar",
+                type:'success',
+                timer: 2e3, showConfirmButton: !1 
+            });
+            setTimeout(function (){
+                window.location.href="<?php echo base_url('adminsystem/profile_madrasah') ?>";
+            }, 1000);
+        },
+        error: function () {
+            Swal({
+                title: "Artikel Gagal Diedit",
+                text: "Isi form dengan benar",
+                type:'warning',
+                timer: 3e3, showConfirmButton: !1 
+            });
+            setTimeout(function (){
+                window.location.href="<?php echo base_url('adminsystem/profile_madrasah') ?>";
+            }, 1000);
+        }
+    });
+});
+// End of edit profile madrasah
+
+// Edit visi
+$("#submit-edit-visi").on('click',function(){
+    var visi=$("#visimisi input[name=visi]").val();
+    $.ajax({
+        url: "<?php echo base_url('adminsystem/profile_madrasah/edit_visi') ?>",
+        type:'POST',
+        data:{
+            visi:visi,
+        },
+        success: function(data){
+            Swal({
+                title: "Visi Berhasil Diedit",
+                text: "Mohon tunggu sebentar",
+                type:'success',
+                timer: 2e3, showConfirmButton: !1 
+            });
+            setTimeout(function (){
+                window.location.href="<?php echo base_url('adminsystem/profile_madrasah/visi_misi') ?>";
+            }, 1000);
+        },
+        error: function () {
+            Swal({
+                title: "Visi Gagal Diedit",
+                text: "Isi form dengan benar",
+                type:'warning',
+                timer: 3e3, showConfirmButton: !1 
+            });
+            setTimeout(function (){
+                window.location.href="<?php echo base_url('adminsystem/profile_madrasah/visi_misi') ?>";
+            }, 1000);
+        }
+    });
+});
+// End of edit visi
+
+// Edit misi
+$("#submit-edit-misi").on('click',function(){
+    var misi=$("#visimisi textarea[name=misi]").val();
+    $.ajax({
+        url: "<?php echo base_url('adminsystem/profile_madrasah/edit_misi') ?>",
+        type:'POST',
+        data:{
+            misi:misi,
+        },
+        success: function(data){
+            Swal({
+                title: "Misi Berhasil Diedit",
+                text: "Mohon tunggu sebentar",
+                type:'success',
+                timer: 2e3, showConfirmButton: !1 
+            });
+            setTimeout(function (){
+                window.location.href="<?php echo base_url('adminsystem/profile_madrasah/visi_misi') ?>";
+            }, 1000);
+        },
+        error: function () {
+            Swal({
+                title: "Misi Gagal Diedit",
+                text: "Isi form dengan benar",
+                type:'warning',
+                timer: 3e3, showConfirmButton: !1 
+            });
+            setTimeout(function (){
+                window.location.href="<?php echo base_url('adminsystem/profile_madrasah/visi_misi') ?>";
+            }, 1000);
+        }
+    });
+});
+// End of edit misi
 </script>
 
 

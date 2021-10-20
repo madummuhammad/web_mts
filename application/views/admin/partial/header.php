@@ -9,7 +9,7 @@
     <title>MTS AT TAQWA</title>
     <!-- Favicon icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
-    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url('assets/images/upload/logo_mts.png') ?>">
     <link href="<?php echo base_url('assets/admin')?>/vendor/pg-calendar/css/pignose.calendar.min.css" rel="stylesheet">
     <link href="<?php echo base_url('assets/admin')?>/vendor/chartist/css/chartist.min.css" rel="stylesheet">
     <link href="<?php echo base_url('assets/admin')?>/css/custom_admin.css" rel="stylesheet">

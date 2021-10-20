@@ -10387,14 +10387,14 @@ header .navbar-bottom .navbar-toggler {
   z-index: 99;
   top: 0;
   left: 0;
-  background: #069758;
+  background: #23462E;
   transition: top 3s;
   box-shadow: none;
   -webkit-transition: all 0.5s ease-out;
   -moz-transition: all 0.5s ease-out;
   -o-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
-  padding: 24px;
+  padding:0px 24px;
 }
 
 .navbar-close {

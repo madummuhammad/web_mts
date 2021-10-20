@@ -29,3 +29,12 @@ $(document).ready(function() {
     focus: !1
   });
 }); 
+
+$(document).ready(function() {
+  $('.summernote-content').summernote({
+    height: 190,
+    minHeight: null,
+    maxHeight: null,
+    focus: !1
+  });
+}); 

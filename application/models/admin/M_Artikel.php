@@ -10,7 +10,11 @@ class M_Artikel extends CI_Model {
 
 	public function tampil_spesifik_artikel()
 	{
-		$id_artikel=$this->uri->segment(4);
+		if ($this->uri->segment(1)=='artikel' OR $this->uri->segment(1)=='Artikel') {
+			$id_artikel=$this->uri->segment(3);
+		} else {
+			$id_artikel=$this->uri->segment(4);
+		}
 		$this->db->where('id_artikel',$id_artikel);
 		return $this->db->get('artikel')->row_array();
 	}

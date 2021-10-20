@@ -54,14 +54,6 @@
 .footer-logo{
 	font-size: 35px;
 }
-
-.artikel-tag{
-	text-overflow: ellipsis;
-	overflow: hidden; 
-	width: 100%; 
-	height: 100px; 
-	white-space: nowrap;
-}
 @media (max-width: 576px) {
 	.navbar-collapse{
 		background-color: #069758 !important;
