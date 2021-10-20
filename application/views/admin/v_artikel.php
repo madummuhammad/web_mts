@@ -11,21 +11,25 @@
                                                 <tr>
                                                     <th>No</th>
                                                     <th>Judul</th>
+                                                    <th>Gambar</th>
                                                     <th>Tanggal</th>
+                                                    <th>Penulis</th>
                                                     <th>Aksi</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <?php foreach ($artikel as $row => $value): ?>
-                                                    <tr>
+                                                    <tr class="text-dark">
                                                         <td><?php echo $row+1 ?></td>
                                                         <td><?php echo $value['judul'] ?></td>
+                                                        <td><img src="<?= base_url('assets/images/upload/artikel/').$value['gambar'] ?>" height="100" width="100" alt=""></td>
                                                         <td><?php echo $value['tanggal_upload'] ?></td>
-                                                        <td>
+                                                        <td><?= $value['penulis'] ?> </td>
+                                                        <td class="d-flex justify-content-center justify-items-center">
                                                             <div class="btn-group text-white">
-                                                                <a class="badge badge-dark">lihat <i class="far fa-eye"></i></a>
-                                                                <a class="badge badge-success">edit <i class="fas fa-pen-square"></i></a>
-                                                                <a class="badge badge-primary"><i class="fas fa-info-circle"></i> hapus</a>
+                                                                <a class="badge btn-square badge-dark custom-btn"><i class="far fa-eye"></i></a>
+                                                                <a href="<?= base_url('adminsystem/artikel/edit/').$value['id_artikel'] ?>" class="badge btn-square badge-success custom-btn"><i class="fas fa-pen-square"></i></a>
+                                                                <a data-toggle="hapus-artikel" class="badge btn-square badge-primary custom-btn" data-id="<?= $value['id_artikel'] ?>"><i class="fas fa-trash"></i></a>
                                                             </div>
                                                         </td>
                                                     </tr>

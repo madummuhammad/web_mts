@@ -38,4 +38,27 @@ class Artikel extends CI_Controller {
 	{
 		$this->M_Artikel->add_artikel();
 	}
+
+	public function edit()
+	{
+		$data['user']=$this->session->userdata();
+		$data['title']='Edit Artikel';
+		$data['artikel']=$this->M_Artikel->tampil_spesifik_artikel();
+		$this->load->view('admin/partial/header');
+		$this->load->view('admin/partial/topbar');
+		$this->load->view('admin/partial/sidebar');
+		$this->load->view('admin/partial/breadcrumb',$data);
+		$this->load->view('admin/v_edit_artikel',$data);
+		$this->load->view('admin/partial/footer');
+	}
+
+	public function update()
+	{
+		$this->M_Artikel->update();
+	}
+
+	public function hapus()
+	{
+		$this->M_Artikel->hapus();
+	}
 }

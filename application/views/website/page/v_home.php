@@ -11,35 +11,30 @@
     									<img src="<?php echo base_url('assets/images/upload/logo_mts.png') ?>" alt="">
     									<p class="text-white font-weight-bold">MTs AT TAQWA JATINGARANG</p>
     								</a>
-<!--     								<a class="navbar-brand text-white custom-navbar-brand" href="#"
+    							</div>
+    							<div>
+    								<button
+    								class="navbar-toggler"
+    								type="button"
+    								data-target="#navbarSupportedContent"
+    								aria-controls="navbarSupportedContent"
+    								aria-expanded="false"
+    								aria-label="Toggle navigation"
     								>
-    								<p>MTs At Taqwa</p>
-    								<p>Jatingarang</p>
-    							</a> -->
-    						</div>
-    						<div>
-    							<button
-    							class="navbar-toggler"
-    							type="button"
-    							data-target="#navbarSupportedContent"
-    							aria-controls="navbarSupportedContent"
-    							aria-expanded="false"
-    							aria-label="Toggle navigation"
-    							>
-    							<span class="navbar-toggler-icon"></span>
-    						</button>
-    						<div
-    						class="navbar-collapse justify-content-center collapse"
-    						id="navbarSupportedContent"
-    						>
-    						<ul
-    						class="navbar-nav d-lg-flex justify-content-between align-items-center"
-    						>
-    						<li>
-    							<button class="navbar-close">
-    								<i class="mdi mdi-close"></i>
+    								<span class="navbar-toggler-icon"></span>
     							</button>
-    						</li>
+    							<div
+    							class="navbar-collapse justify-content-center collapse"
+    							id="navbarSupportedContent"
+    							>
+    							<ul
+    							class="navbar-nav d-lg-flex justify-content-between align-items-center"
+    							>
+    							<li>
+    								<button class="navbar-close">
+    									<i class="mdi mdi-close"></i>
+    								</button>
+    							</li>
 
     							<!-- <li class="nav-item active dropdown">
     								<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="index.html">Profile</a>
@@ -155,63 +150,28 @@
 				<div class="card custom-bg-primary text-white">
 					<div class="card-body">
 						<h2>Artikel Terbaru</h2>
-
-						<div
-						class="d-flex border-bottom-blue pt-3 pb-4 align-items-center justify-content-between"
-						>
-						<div class="pr-3">
-							<h5>Siswa Kelas 9A, memenangkan lomba taekwondo</h5>
-							<div class="fs-12">
-								<span class="mr-2">Foto </span>10 Menit yang lalu
-							</div>
-						</div>
-						<div class="rotate-img">
-							<img
-							src="assets/images/dashboard/home_1.jpg"
-							alt="thumb"
-							class="img-fluid img-lg"
-							/>
-						</div>
+						<?php foreach ($artikel_terbaru as $row => $value): ?>
+							<div class="d-flex border-bottom-blue pt-3 pb-4 align-items-center justify-content-between">
+								<div class="pr-3">
+									<a href="" class="text-decoration-none text-white">
+										<h5>Siswa Kelas 9A, memenangkan lomba taekwondo</h5>
+									</a>
+									<div class="fs-12">
+										<?= $value['tanggal_upload'] ?>
+									</div>
+								</div>
+								<a href="">
+									<div class="rotate-img">
+										<img src="assets/images/dashboard/home_1.jpg" alt="thumb" class="img-fluid img-lg"/>
+									</div>
+								</a>
+							</div>			
+						<?php endforeach ?>
 					</div>
-					<div
-					class="d-flex border-bottom-blue pt-3 pb-4 align-items-center justify-content-between"
-					>
-					<div class="pr-3">
-						<h5>Siswa Kelas 9A, memenangkan lomba taekwondo</h5>
-						<div class="fs-12">
-							<span class="mr-2">Foto </span>10 Menit yang lalu
-						</div>
-					</div>
-					<div class="rotate-img">
-						<img
-						src="assets/images/dashboard/home_1.jpg"
-						alt="thumb"
-						class="img-fluid img-lg"
-						/>
-					</div>
-				</div>
-				<div
-				class="d-flex border-bottom-blue pt-3 pb-4 align-items-center justify-content-between"
-				>
-				<div class="pr-3">
-					<h5>Siswa Kelas 9A, memenangkan lomba taekwondo</h5>
-					<div class="fs-12">
-						<span class="mr-2">Foto </span>10 Menit yang lalu
-					</div>
-				</div>
-				<div class="rotate-img">
-					<img
-					src="assets/images/dashboard/home_1.jpg"
-					alt="thumb"
-					class="img-fluid img-lg"
-					/>
 				</div>
 			</div>
 		</div>
-	</div>
-</div>
-</div>
-<div class="row" data-aos="fade-up">
+		<div class="row" data-aos="fade-up">
 <!-- 	<div class="col-lg-3 stretch-card grid-margin">
 		<div class="card">
 			<div class="card-body">
@@ -236,36 +196,35 @@
 	<div class="col-lg-12 stretch-card grid-margin">
 		<div class="card">
 			<div class="card-body">
-				<div class="row">
-					<div class="col-sm-4 grid-margin">
-						<div class="position-relative">
-							<div class="rotate-img">
-								<img
-								src="<?php echo base_url('') ?>assets/images/upload/artikel/artikel1.jpg"
-								alt="thumb"
-								class="img-fluid"
-								/>
-							</div>
-<!-- 							<div class="badge-positioned">
-								<span class="badge badge-danger font-weight-bold"
-								>Flash news</span
-								>
-							</div> -->
+				<?php foreach ($artikel as $row => $value): ?>
+					<?php if ($row+1 >3): ?>
+						<div class="row">
+							<div class="col-sm-4 grid-margin">
+								<a href="">
+									<div class="position-relative">
+										<div class="rotate-img">
+											<img
+											src="<?php echo base_url('') ?>assets/images/upload/artikel/<?= $value['gambar'] ?>"
+											alt="thumb"
+											class="img-fluid"
+											/>
+										</div>
+									</div>	
+								</a>
+							</div>		
+							<div class="col-sm-8  grid-margin d-flex flex-column justify-items-center justify-content-center">
+								<a href="" class="text-decoration-none">
+									<h2 class="mb-2 font-weight-600 text-dark text-capitalize">
+										<?= $value['judul'] ?>
+									</h2>
+								</a>
+								<div class="fs-13 mb-2">
+									<span class="mr-2 text-capitalize"><?= $value['penulis'] ?>,</span><?= $value['tanggal_upload'] ?>
+								</div>
+							</div>	
 						</div>
-					</div>
-					<div class="col-sm-8  grid-margin">
-						<h2 class="mb-2 font-weight-600">
-							Yel yel Pramuka Terbaik Putra MTs At Taqwa Jatingarang LT II Penggalang Kwarran Bodeh 2016
-						</h2>
-						<div class="fs-13 mb-2">
-							<span class="mr-2">Nama Penulis</span>10 Menit yang lalu
-						</div>
-						<p class="mb-0">
-							Lorem Ipsum has been the industry's standard dummy
-							text ever since the 1500s, when an
-						</p>
-					</div>
-				</div>
+					<?php endif ?>
+				<?php endforeach ?>
 			</div>
 		</div>
 	</div>

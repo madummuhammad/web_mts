@@ -81,13 +81,14 @@
                     dataType:'json',
                     success: function(data){
                         if (data=='Gagal') {
-                           Swal({
+                         Swal.fire({
+                            icon:'error',
                             title: "Gagal Login",
                             text: "Silakan Masukan username dan Password Dengan Benar",
                             type:'warning',
                             timer: 1e3, showConfirmButton: !1 
                         });
-                       } else {
+                     } else {
                         Swal({
                             title: "Berhasil Login",
                             text: "Mohon tunggu sebentar",

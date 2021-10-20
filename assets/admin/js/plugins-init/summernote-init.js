@@ -12,11 +12,20 @@
 // }, window.save = function() {
 //     $(".click2edit").summernote("destroy")
 // };
-  $(document).ready(function() {
-    $('#content').summernote({
-      height: 190,
-      minHeight: null,
-      maxHeight: null,
-      focus: !1
-    });
-  }); 
+$(document).ready(function() {
+  $('#content').summernote({
+    height: 190,
+    minHeight: null,
+    maxHeight: null,
+    focus: !1
+  });
+}); 
+
+$(document).ready(function() {
+  $('#edit-content-artikel').summernote({
+    height: 190,
+    minHeight: null,
+    maxHeight: null,
+    focus: !1
+  });
+}); 
