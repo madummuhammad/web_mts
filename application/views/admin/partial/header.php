@@ -18,6 +18,7 @@
     <!-- Datatable -->
     <link href="<?php echo base_url('assets/admin')?>/vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
     <link href="<?php echo base_url('assets/admin')?>/vendor/summernote/summernote.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo base_url('assets/admin')?>/vendor/select2/css/select2.min.css">
 
 </head>
 

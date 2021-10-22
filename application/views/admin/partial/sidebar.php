@@ -34,9 +34,9 @@
                               <li><a href="<?php echo base_url('adminsystem/artikel/tulis') ?>">Prestasi</a></li>
                               <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Sarana dan Prasarana</a>
                                 <ul aria-expanded="false">
-                                    <li><a href="./email-compose.html">Tanah dan Bangunan</a></li>
-                                    <li><a href="./email-inbox.html">Ruang dan Gedung</a></li>
-                                    <li><a href="./email-read.html">Lahan non Bangunan</a></li>
+                                    <li><a href="<?= base_url('adminsystem/profile_madrasah/tanah_bangunan') ?>">Tanah dan Bangunan</a></li>
+                                    <li><a href="<?= base_url('adminsystem/profile_madrasah/ruang_gedung') ?>">Ruang dan Gedung</a></li>
+                                    <li><a href="<?= base_url('adminsystem/profile_madrasah/lahan_non_bangunan') ?>">Lahan non Bangunan</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -44,7 +44,7 @@
 
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="icon icon-single-04"></i><span class="nav-text">SDM</span></a>
                        <ul aria-expanded="false">
-                          <li><a href="<?php echo base_url('adminsystem/artikel') ?>">Data Ketenagaan</a></li>
+                          <li><a href="<?php echo base_url('adminsystem/ketenagaan') ?>">Data Ketenagaan</a></li>
                           <li><a href="<?php echo base_url('adminsystem/artikel/tulis') ?>">Data Kesiswaan</a></li>
                           <li><a href="<?php echo base_url('adminsystem/artikel/tulis') ?>">Pembina Ektrakulikuler</a></li>
                       </ul>

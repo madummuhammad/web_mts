@@ -49,6 +49,70 @@ class Profile_madrasah extends CI_Controller {
 		$this->M_Profile->edit_misi();
 	}
 
+	public function tanah_bangunan()
+	{
+		$data['user']=$this->session->userdata();
+		$data['title']='Tanah dan Bangunan';
+		$data['tanah_bangunan']=$this->M_Profile->tampil_tanah_bangunan();
+		$this->load->view('admin/partial/header');
+		$this->load->view('admin/partial/topbar');
+		$this->load->view('admin/partial/sidebar');
+		$this->load->view('admin/partial/breadcrumb',$data);
+		$this->load->view('admin/v_tanah_bangunan',$data);
+		$this->load->view('admin/partial/footer');
+	}
+
+	public function edit_tanah_bangunan()
+	{
+		$this->M_Profile->edit_tanah_bangunan();
+	}
+
+	public function lahan_non_bangunan()
+	{
+		$data['user']=$this->session->userdata();
+		$data['title']='Lahan Non Bangunan';
+		$data['non_bangunan']=$this->M_Profile->tampil_non_bangunan();
+		$this->load->view('admin/partial/header');
+		$this->load->view('admin/partial/topbar');
+		$this->load->view('admin/partial/sidebar');
+		$this->load->view('admin/partial/breadcrumb',$data);
+		$this->load->view('admin/v_non_bangunan',$data);
+		$this->load->view('admin/partial/footer');
+	}
+
+	public function edit_non_bangunan()
+	{
+		$this->M_Profile->edit_non_bangunan();
+	}
+
+	public function ruang_gedung()
+	{
+		$data['user']=$this->session->userdata();
+		$data['title']='Ruangan dan Gedung';
+		$data['ruang_gedung']=$this->M_Profile->tampil_ruang_gedung();
+		$this->load->view('admin/partial/header');
+		$this->load->view('admin/partial/topbar');
+		$this->load->view('admin/partial/sidebar');
+		$this->load->view('admin/partial/breadcrumb',$data);
+		$this->load->view('admin/v_ruang_gedung',$data);
+		$this->load->view('admin/partial/footer',$data);
+	}
+
+	public function tambah_ruang_gedung()
+	{
+		$this->M_Profile->tambah_ruang_gedung();
+	}
+
+	public function edit_ruang_gedung()
+	{
+		$this->M_Profile->edit_ruang_gedung();
+	}
+
+	public function hapus_ruang_gedung()
+	{
+		$this->M_Profile->hapus_ruang_gedung();
+	}
+
 	
 
 }
