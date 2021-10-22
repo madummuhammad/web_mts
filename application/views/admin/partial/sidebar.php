@@ -19,7 +19,7 @@
                           <li><a href="<?php echo base_url('adminsystem/artikel/tulis') ?>">Tulis Artikel</a></li>
                       </ul>
                   </li>
-                  <li><a href="widget-basic.html" aria-expanded="false"><i class="icon icon-single-copy-06"></i><span
+                  <li><a href="<?php echo base_url('adminsystem/galeri') ?>" aria-expanded="false"><i class="icon icon-single-copy-06"></i><span
                     class="nav-text">Galeri</span></a></li>
                     <li><a href="widget-basic.html" aria-expanded="false"><i class="far fa-image"></i><span
                         class="nav-text">Cover Web</span></a></li>
@@ -29,9 +29,9 @@
                            <ul aria-expanded="false">
                               <li><a href="<?php echo base_url('adminsystem/profile_madrasah') ?>">Profile</a></li>
                               <li><a href="<?php echo base_url('adminsystem/profile_madrasah/visi_misi') ?>">Visi dan Misi</a></li>
-                              <li><a href="<?php echo base_url('adminsystem/artikel/tulis') ?>">Struktur</a></li>
-                              <li><a href="<?php echo base_url('adminsystem/artikel/tulis') ?>">Kepengurusan</a></li>
-                              <li><a href="<?php echo base_url('adminsystem/artikel/tulis') ?>">Prestasi</a></li>
+<!--                               <li><a href="<?php echo base_url('adminsystem/artikel/tulis') ?>">Struktur</a></li>
+                              <li><a href="<?php echo base_url('adminsystem/artikel/tulis') ?>">Kepengurusan</a></li> -->
+                              <li><a href="<?php echo base_url('adminsystem/prestasi') ?>">Prestasi</a></li>
                               <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Sarana dan Prasarana</a>
                                 <ul aria-expanded="false">
                                     <li><a href="<?= base_url('adminsystem/profile_madrasah/tanah_bangunan') ?>">Tanah dan Bangunan</a></li>
@@ -45,8 +45,8 @@
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="icon icon-single-04"></i><span class="nav-text">SDM</span></a>
                        <ul aria-expanded="false">
                           <li><a href="<?php echo base_url('adminsystem/ketenagaan') ?>">Data Ketenagaan</a></li>
-                          <li><a href="<?php echo base_url('adminsystem/artikel/tulis') ?>">Data Kesiswaan</a></li>
-                          <li><a href="<?php echo base_url('adminsystem/artikel/tulis') ?>">Pembina Ektrakulikuler</a></li>
+                          <li><a href="<?php echo base_url('adminsystem/kesiswaan') ?>">Data Kesiswaan</a></li>
+                          <li><a href="<?php echo base_url('adminsystem/ekskul/') ?>">Pembina Ektrakulikuler</a></li>
                       </ul>
                   </li>
               </ul>

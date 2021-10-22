@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Kesiswaan extends CI_Controller {
+class Prestasi extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
@@ -11,29 +11,29 @@ class Kesiswaan extends CI_Controller {
 	public function index()
 	{
 		$data['user']=$this->session->userdata();
-		$data['title']='Kesiswaan';
-		$data['kesiswaan']=$this->M_Kesiswaan->tampil_kesiswaan();
+		$data['title']='Prestasi';
+		$data['prestasi']=$this->M_Prestasi->tampil_prestasi();
 		$data['ruang_gedung']=$this->M_Profile->tampil_ruang_gedung();
 		$this->load->view('admin/partial/header');
 		$this->load->view('admin/partial/topbar');
 		$this->load->view('admin/partial/sidebar');
 		$this->load->view('admin/partial/breadcrumb',$data);
-		$this->load->view('admin/v_kesiswaan',$data);
+		$this->load->view('admin/v_prestasi',$data);
 		$this->load->view('admin/partial/footer',$data);
 	}
 
 	public function tambah()
 	{
-		$this->M_Kesiswaan->tambah();
+		$this->M_Prestasi->tambah();
 	}
 
 	public function edit()
 	{
-		$this->M_Kesiswaan->edit();
+		$this->M_Prestasi->edit();
 	}
 
 	public function hapus()
 	{
-		$this->M_Kesiswaan->hapus();
+		$this->M_Prestasi->hapus();
 	}
 }

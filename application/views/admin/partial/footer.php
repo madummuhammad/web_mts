@@ -461,8 +461,8 @@ $("#submit-tambah-ruangan-gedung").on('click',function(){
 // edit ruangan dan gedung
 <?php 
 foreach ($ruang_gedung as $value) {
-   ?>
-   $("#submit-edit-ruangan-gedung<?= $value['id'] ?>").on('click',function(){
+ ?>
+ $("#submit-edit-ruangan-gedung<?= $value['id'] ?>").on('click',function(){
     var nama_bangunan=$("#edit_ruangan_gedung<?= $value['id'] ?> input[name=nama_bangunan]").val();
     var status_kepemilikan=$("#edit_ruangan_gedung<?= $value['id'] ?> select[name=status_kepemilikan]").val();
     var baik=$("#edit_ruangan_gedung<?= $value['id'] ?> input[name=kondisi_baik]").val();
@@ -665,6 +665,410 @@ for (let i = 0; i < btn_hapus_ketenagaan.length; i++) {
     }
 }
 // End of hapus ketenagaan
+
+// Tambah Kesiswaan
+$("#submit-tambah-kesiswaan").on('click',function(){
+    var tahun=$("#tambah_kesiswaan input[name=tahun]").val();
+    var vii=$("#tambah_kesiswaan input[name=vii]").val();
+    var viii=$("#tambah_kesiswaan input[name=viii]").val();
+    var ix=$("#tambah_kesiswaan input[name=ix]").val();
+
+    var jumlah=parseInt(vii)+parseInt(viii)+parseInt(ix);
+
+    $.ajax({
+        url: "<?php echo base_url('adminsystem/kesiswaan/tambah') ?>",
+        type:'POST',
+        data:{
+            tahun:tahun,
+            vii:vii,
+            viii:viii,
+            ix:ix,
+            jumlah:jumlah
+        },
+        success: function(data){
+            Swal({
+                title: "Data Kesiswaan Berhasil Ditambah",
+                text: "Mohon tunggu sebentar",
+                type:'success',
+                timer: 2e3, showConfirmButton: !1 
+            });
+            setTimeout(function (){
+                window.location.href="<?php echo base_url('adminsystem/kesiswaan') ?>";
+            }, 1000);
+        },
+        error: function () {
+            Swal({
+                title: "Data Kesiswaan Gagal Ditambah",
+                text: "Isi form dengan benar",
+                type:'warning',
+                timer: 3e3, showConfirmButton: !1 
+            });
+            setTimeout(function (){
+                window.location.href="<?php echo base_url('adminsystem/kesiswaan') ?>";
+            }, 1000);
+        }
+    });
+});
+// End of tambah kesiswaan
+
+
+// Edit kesiswaan
+var btn_edit_kesiswaan = $("[data-toggle=btn-edit-kesiswaan]");
+for (let i = 0; i < btn_edit_kesiswaan.length; i++) {
+    btn_edit_kesiswaan[i].onclick = function () {
+        var id=$(this).data('id');
+        var tahun=$("#edit_kesiswaan"+id+" input[name=tahun]").val();
+        var vii=$("#edit_kesiswaan"+id+" input[name=vii]").val();
+        var viii=$("#edit_kesiswaan"+id+" input[name=viii]").val();
+        var ix=$("#edit_kesiswaan"+id+" input[name=ix]").val();
+
+        var jumlah=parseInt(vii)+parseInt(viii)+parseInt(ix);
+        $.ajax({
+            url: "<?php echo base_url('adminsystem/kesiswaan/edit') ?>",
+            type:'POST',
+            data:{
+                id:id,
+                tahun:tahun,
+                vii:vii,
+                viii:viii,
+                ix:ix,
+                jumlah:jumlah
+            },
+            success: function(data){
+                Swal({
+                    title: "Data Kesiswaan Berhasil Diedit",
+                    text: "Mohon tunggu sebentar",
+                    type:'success',
+                    timer: 2e3, showConfirmButton: !1 
+                });
+                setTimeout(function (){
+                    window.location.href="<?php echo base_url('adminsystem/kesiswaan') ?>";
+                }, 1000);
+            },
+            error: function () {
+                Swal({
+                    title: "Data Kesiswaan Gagal Diedit",
+                    text: "Isi form dengan benar",
+                    type:'warning',
+                    timer: 3e3, showConfirmButton: !1 
+                });
+                setTimeout(function (){
+                    window.location.href="<?php echo base_url('adminsystem/kesiswaan') ?>";
+                }, 1000);
+            }
+        });
+    }
+}
+// End of edit kesiswaan
+
+// hapus kesiswaan
+var btn_hapus_kesiswaan = $("[data-toggle=btn-hapus-kesiswaan]");
+for (let i = 0; i < btn_hapus_kesiswaan.length; i++) {
+    btn_hapus_kesiswaan[i].onclick = function () {
+        var id=$(this).data('id');
+        Swal.fire({
+            title: 'Hapus data ini?',
+            text: "Data yang sudah di hapus tidak akan bisa dikembalikan!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Ya, hapus!'
+        }).then((result) => {
+            $.ajax({
+                url: "<?php echo base_url('adminsystem/kesiswaan/hapus') ?>",
+                type:'POST',
+                data:{
+                    id:id
+                },
+                success: function(data){
+                    Swal.fire(
+                        'Terhapus!',
+                        'Data artikel berhasil dihapus.',
+                        'success'
+                        );
+                    setTimeout(function (){
+                        window.location.href="<?php echo base_url('adminsystem/kesiswaan') ?>";
+                    }, 1000);
+                },
+            });
+        })
+    }
+}
+// End of hapus kesiswaan
+
+// Ekstrakulikuler
+$("#submit-tambah-ekskul").on('click',function(){
+    var ekskul=$("#tambah_ekskul input[name=ekskul]").val();
+    var pembina=$("#tambah_ekskul select[name=pembina]").val();
+
+    $.ajax({
+        url: "<?php echo base_url('adminsystem/ekskul/tambah') ?>",
+        type:'POST',
+        data:{
+            ekskul:ekskul,
+            pembina:pembina
+        },
+        success: function(data){
+            Swal({
+                title: "Data Kesiswaan Berhasil Ditambah",
+                text: "Mohon tunggu sebentar",
+                type:'success',
+                timer: 2e3, showConfirmButton: !1 
+            });
+            setTimeout(function (){
+                window.location.href="<?php echo base_url('adminsystem/ekskul') ?>";
+            }, 1000);
+        },
+        error: function () {
+            Swal({
+                title: "Data Kesiswaan Gagal Ditambah",
+                text: "Isi form dengan benar",
+                type:'warning',
+                timer: 3e3, showConfirmButton: !1 
+            });
+            setTimeout(function (){
+                window.location.href="<?php echo base_url('adminsystem/ekskul') ?>";
+            }, 1000);
+        }
+    });
+});
+// End of Ekstrakulikuler
+
+// Edit ekskul
+var btn_edit_ekskul = $("[data-toggle=btn-edit-ekskul]");
+for (let i = 0; i < btn_edit_ekskul.length; i++) {
+    btn_edit_ekskul[i].onclick = function () {
+        var id=$(this).data('id');
+        var ekskul=$("#edit_ekskul"+id+" input[name=ekskul]").val();
+        var pembina=$("#edit_ekskul"+id+" select[name=pembina]").val();
+        $.ajax({
+            url: "<?php echo base_url('adminsystem/ekskul/edit') ?>",
+            type:'POST',
+            data:{
+                id:id,
+                ekskul:ekskul,
+                pembina:pembina
+            },
+            success: function(data){
+                Swal({
+                    title: "Data Ekstrakulikuler Berhasil Diedit",
+                    text: "Mohon tunggu sebentar",
+                    type:'success',
+                    timer: 2e3, showConfirmButton: !1 
+                });
+                setTimeout(function (){
+                    window.location.href="<?php echo base_url('adminsystem/ekskul') ?>";
+                }, 1000);
+            },
+            error: function () {
+                Swal({
+                    title: "Data Ekstrakulikuler Gagal Ditambah",
+                    text: "Isi form dengan benar",
+                    type:'warning',
+                    timer: 3e3, showConfirmButton: !1 
+                });
+                setTimeout(function (){
+                    window.location.href="<?php echo base_url('adminsystem/ekskul') ?>";
+                }, 1000);
+            }
+        });
+    }
+}
+// End of edit
+
+// Hapus ekskul
+var btn_hapus_ekskul = $("[data-toggle=btn-hapus-ekskul]");
+for (let i = 0; i < btn_hapus_ekskul.length; i++) {
+    btn_hapus_ekskul[i].onclick = function () {
+        var id=$(this).data('id');
+        Swal.fire({
+            title: 'Hapus data ini?',
+            text: "Data yang sudah di hapus tidak akan bisa dikembalikan!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Ya, hapus!'
+        }).then((result) => {
+            $.ajax({
+                url: "<?php echo base_url('adminsystem/ekskul/hapus') ?>",
+                type:'POST',
+                data:{
+                    id:id
+                },
+                success: function(data){
+                    Swal.fire(
+                        'Terhapus!',
+                        'Data artikel berhasil dihapus.',
+                        'success'
+                        );
+                    setTimeout(function (){
+                        window.location.href="<?php echo base_url('adminsystem/ekskul') ?>";
+                    }, 1000);
+                },
+            });
+        })
+    }
+}
+// End of hapus ekskul
+
+// Prestasi
+$("#submit-tambah-prestasi").on('click',function(){
+    var tahun=$("#tambah_prestasi input[name=tahun]").val();
+    var kejuaraan=$("#tambah_prestasi input[name=kejuaraan]").val();
+
+    $.ajax({
+        url: "<?php echo base_url('adminsystem/prestasi/tambah') ?>",
+        type:'POST',
+        data:{
+            tahun:tahun,
+            kejuaraan:kejuaraan
+        },
+        success: function(data){
+            Swal({
+                title: "Data Prestasi Berhasil Ditambah",
+                text: "Mohon tunggu sebentar",
+                type:'success',
+                timer: 2e3, showConfirmButton: !1 
+            });
+            setTimeout(function (){
+                window.location.href="<?php echo base_url('adminsystem/prestasi') ?>";
+            }, 1000);
+        },
+        error: function () {
+            Swal({
+                title: "Data Prestasi Gagal Ditambah",
+                text: "Isi form dengan benar",
+                type:'warning',
+                timer: 3e3, showConfirmButton: !1 
+            });
+            setTimeout(function (){
+                window.location.href="<?php echo base_url('adminsystem/prestasi') ?>";
+            }, 1000);
+        }
+    });
+});
+// End of prestasi
+
+// Edit edit prestasi
+var btn_edit_prestasi = $("[data-toggle=btn-edit-prestasi]");
+for (let i = 0; i < btn_edit_prestasi.length; i++) {
+    btn_edit_prestasi[i].onclick = function () {
+        var id=$(this).data('id');
+        var tahun=$("#edit_prestasi"+id+" input[name=tahun]").val();
+        var kejuaraan=$("#edit_prestasi"+id+" input[name=kejuaraan]").val();
+        $.ajax({
+            url: "<?php echo base_url('adminsystem/prestasi/edit') ?>",
+            type:'POST',
+            data:{
+                id:id,
+                tahun:tahun,
+                kejuaraan:kejuaraan
+            },
+            success: function(data){
+                Swal({
+                    title: "Data Prestasi Berhasil Diedit",
+                    text: "Mohon tunggu sebentar",
+                    type:'success',
+                    timer: 2e3, showConfirmButton: !1 
+                });
+                setTimeout(function (){
+                    window.location.href="<?php echo base_url('adminsystem/prestasi') ?>";
+                }, 1000);
+            },
+            error: function () {
+                Swal({
+                    title: "Data Prestasi Gagal Ditambah",
+                    text: "Isi form dengan benar",
+                    type:'warning',
+                    timer: 3e3, showConfirmButton: !1 
+                });
+                setTimeout(function (){
+                    window.location.href="<?php echo base_url('adminsystem/prestasi') ?>";
+                }, 1000);
+            }
+        });
+    }
+}
+// End edit of prestasi
+
+// Hapus Prestasi
+var btn_hapus_prestasi = $("[data-toggle=btn-hapus-prestasi]");
+for (let i = 0; i < btn_hapus_prestasi.length; i++) {
+    btn_hapus_prestasi[i].onclick = function () {
+        var id=$(this).data('id');
+        Swal.fire({
+            title: 'Hapus data ini?',
+            text: "Data yang sudah di hapus tidak akan bisa dikembalikan!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Ya, hapus!'
+        }).then((result) => {
+            $.ajax({
+                url: "<?php echo base_url('adminsystem/prestasi/hapus') ?>",
+                type:'POST',
+                data:{
+                    id:id
+                },
+                success: function(data){
+                    Swal.fire(
+                        'Terhapus!',
+                        'Data prestasi berhasil dihapus.',
+                        'success'
+                        );
+                    setTimeout(function (){
+                        window.location.href="<?php echo base_url('adminsystem/prestasi') ?>";
+                    }, 1000);
+                },
+            });
+        })
+    }
+}
+// End of hapus prestasi
+
+// Tambah galeri
+$("#submit-tambah-galeri").on('click',function(){
+    const fileupload = $('#gambar-galeri').prop('files')[0];
+
+    let formData = new FormData();
+    formData.append('gambar-galeri', fileupload);
+    formData.append('tagline', $('#tagline').val());
+
+    $.ajax({
+        type: 'POST',
+        url: "<?= base_url('adminsystem/galeri/tambah') ?>",
+        data: formData,
+        cache: false,
+        processData: false,
+        contentType: false,
+        success: function (msg) {
+            Swal({
+                title: "Galeri Berhasil Ditambah",
+                text: "Mohon tunggu sebentar",
+                type:'success',
+                timer: 2e3, showConfirmButton: !1 
+            });
+            setTimeout(function (){
+                window.location.href="<?php echo base_url('adminsystem/galeri') ?>";
+            }, 1000);
+        },
+        error: function () {
+            Swal({
+                title: "Galeri Gagal Dikirim",
+                text: "Isi form dengan benar",
+                type:'warning',
+                timer: 3e3, showConfirmButton: !1 
+            });
+            // setTimeout(function (){
+            //     window.location.href="<?php echo base_url('adminsystem/galeri') ?>";
+            // }, 1000);
+        }
+    });
+});
+// End of tambah galeri
 </script>
 
 
