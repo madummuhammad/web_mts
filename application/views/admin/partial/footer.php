@@ -1037,36 +1037,36 @@ $("#submit-tambah-galeri").on('click',function(){
     formData.append('gambar-galeri', fileupload);
     formData.append('tagline', $('#tagline').val());
 
-    $.ajax({
-        type: 'POST',
-        url: "<?= base_url('adminsystem/galeri/tambah') ?>",
-        data: formData,
-        cache: false,
-        processData: false,
-        contentType: false,
-        success: function (msg) {
-            Swal({
-                title: "Galeri Berhasil Ditambah",
-                text: "Mohon tunggu sebentar",
-                type:'success',
-                timer: 2e3, showConfirmButton: !1 
-            });
-            setTimeout(function (){
-                window.location.href="<?php echo base_url('adminsystem/galeri') ?>";
-            }, 1000);
-        },
-        error: function () {
-            Swal({
-                title: "Galeri Gagal Dikirim",
-                text: "Isi form dengan benar",
-                type:'warning',
-                timer: 3e3, showConfirmButton: !1 
-            });
-            // setTimeout(function (){
-            //     window.location.href="<?php echo base_url('adminsystem/galeri') ?>";
-            // }, 1000);
-        }
-    });
+    // $.ajax({
+    //     type: 'POST',
+    //     url: "<?= base_url('adminsystem/galeri/tambah') ?>",
+    //     data: formData,
+    //     cache: false,
+    //     processData: false,
+    //     contentType: false,
+    //     success: function (msg) {
+    //         Swal({
+    //             title: "Galeri Berhasil Ditambah",
+    //             text: "Mohon tunggu sebentar",
+    //             type:'success',
+    //             timer: 2e3, showConfirmButton: !1 
+    //         });
+    //         setTimeout(function (){
+    //             window.location.href="<?php echo base_url('adminsystem/galeri') ?>";
+    //         }, 1000);
+    //     },
+    //     error: function () {
+    //         Swal({
+    //             title: "Galeri Gagal Dikirim",
+    //             text: "Isi form dengan benar",
+    //             type:'warning',
+    //             timer: 3e3, showConfirmButton: !1 
+    //         });
+    //         setTimeout(function (){
+    //             window.location.href="<?php echo base_url('adminsystem/galeri') ?>";
+    //         }, 1000);
+    //     }
+    // });
 });
 // End of tambah galeri
 </script>

@@ -4,8 +4,9 @@
                                 <div class="card-header">
                                     <h4 class="card-title">Data Prestasi</h4>
                                     <button class="btn btn-square btn-outline-primary" data-toggle="modal" data-target="#tambah_galeri"><i class="fas fa-plus-square" ></i></button>
-                                    <form id="galeri">
-                                        <div class="modal fade" id="tambah_galeri">
+                                    
+                                    <div class="modal fade" id="tambah_galeri">
+                                        <form id="galeri">
                                             <div class="modal-dialog modal-dialog-centered">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
@@ -14,7 +15,7 @@
                                                     </div>
                                                     <div class="modal-body">
 
-                                                     <div class="form-group">
+                                                       <div class="form-group">
                                                         <label for="pwd">Tagline</label>
                                                         <input type="text" name="judul" id="judul" class="form-control" placeholder="Masukan Tagline" id="pwd">
                                                     </div>
@@ -33,8 +34,9 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </form>
+                                    </form>
+                                </div>
+                                
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
