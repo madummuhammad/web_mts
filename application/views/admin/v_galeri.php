@@ -14,10 +14,9 @@
                                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                                                     </div>
                                                     <div class="modal-body">
-
-                                                       <div class="form-group">
+                                                     <div class="form-group">
                                                         <label for="pwd">Tagline</label>
-                                                        <input type="text" name="judul" id="judul" class="form-control" placeholder="Masukan Tagline" id="pwd">
+                                                        <input type="text" name="judul" id="tagline" class="form-control" placeholder="Masukan Tagline">
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="gambar">Gambar</label>
@@ -44,8 +43,8 @@
                                         <thead>
                                             <tr>
                                                 <th>No</th>
-                                                <th>Tahun</th>
-                                                <th>Kejuaraan</th>
+                                                <th>Tagline</th>
+                                                <th>Gambar</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
@@ -57,52 +56,52 @@
                                                     <td><img src="<?= base_url('assets/images/upload/galeri/').$value['gambar'] ?>" height="100" width="100" alt=""></td>
                                                     <td>
                                                         <div class="btn-group">
-                                                            <a data-toggle="modal" data-target="#edit_prestasi<?= $value['id'] ?>" class="badge badge-success btn-square text-white custom-btn"><i class="fas fa-pen-square"></i></a>
-                                                            <div class="modal fade" id="edit_prestasi<?= $value['id'] ?>">
-                                                                <div class="modal-dialog modal-dialog-centered">
-                                                                    <div class="modal-content">
-                                                                        <div class="modal-header">
-                                                                            <h4 class="modal-title">Edit Prestasi</h4>
-                                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                                        </div>
-                                                                        <div class="modal-body">
-                                                                            <form id="kesiswaan">
-                                                                                <div class="form-group">
-                                                                                    <label for="email">Tahun</label>
-                                                                                    <div class="input-group">
-                                                                                        <input type="text" class="form-control" placeholder="Masukan Tahun" id="email" name="tahun" value="<?= $value['tahun'] ?>">
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="form-group">
-                                                                                    <label for="email">Kejuaraan</label>
-                                                                                    <div class="input-group">
-                                                                                        <input type="text" class="form-control" placeholder="Masukan Kejuaraan" id="email" name="kejuaraan" value="<?= $value['kejuaraan'] ?>">
-                                                                                    </div>
-                                                                                </div>
-                                                                            </form>
+                                                            <a data-toggle="modal" data-target="#edit_galeri<?= $value['id'] ?>" class="badge badge-success btn-square text-white custom-btn"><i class="fas fa-pen-square"></i></a>
+                                                            <div class="modal fade" id="edit_galeri<?= $value['id'] ?>">
+                                                                <form id="galeri">
+                                                                    <div class="modal-dialog modal-dialog-centered">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <h4 class="modal-title">Edit Galeri</h4>
+                                                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                            </div>
+                                                                            <div class="modal-body">
+                                                                             <div class="form-group">
+                                                                                <label for="pwd">Tagline</label>
+                                                                                <input type="text" name="tagline" id="tagline<?= $value['id'] ?>" class="form-control" placeholder="Masukan Tagline" value="<?= $value['tagline'] ?>">
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="gambar">Gambar</label>
+                                                                                <input id="gambar-galeri<?= $value['id'] ?>" type="file" name="gambar-galeri" class="form-control">
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <img height="300" width="300" src="<?= base_url('assets/images/upload/galeri/').$value['gambar'] ?>" id="preview-edit-galeri" data-toggle="thumb-edit-galeri" class="img-thumbnail">
+                                                                            </div>
+
                                                                         </div>
                                                                         <div class="modal-footer">
-                                                                            <button type="button" data-toggle="btn-edit-prestasi" data-id="<?= $value['id'] ?>" id="submit-tambah-prestasi" class="btn btn-primary">Simpan Perubahan</button>
+                                                                            <button type="button" data-toggle="btn-edit-galeri" data-id="<?= $value['id'] ?>" class="btn btn-primary">Simpan Perubahan</button>
                                                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                            </div>
-                                                            <a data-toggle="btn-hapus-prestasi" data-id="<?= $value['id'] ?>" class="badge badge-primary btn-square text-white custom-btn"><i class="fas fa-trash"></i></a>
+                                                            </form>
                                                         </div>
+                                                        <a data-toggle="btn-hapus-galeri" data-id="<?= $value['id'] ?>" class="badge badge-primary btn-square text-white custom-btn"><i class="fas fa-trash"></i></a>
+                                                    </div>
 
-                                                    </td>
-                                                </tr>
-                                            <?php endforeach ?>
-                                        </tbody>
-                                    </table>
-                                </div>
+                                                </td>
+                                            </tr>
+                                        <?php endforeach ?>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
         <!--**********************************
             Content body end
         ***********************************-->

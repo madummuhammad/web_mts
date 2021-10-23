@@ -14,12 +14,13 @@ class Artikel extends CI_Controller {
 		$data['user']=$this->session->userdata();
 		$data['title']='Artikel';
 		$data['artikel']=$this->M_Artikel->tampil_data_artikel();
+		$data['ruang_gedung']=$this->M_Profile->tampil_ruang_gedung();
 		$this->load->view('admin/partial/header');
 		$this->load->view('admin/partial/topbar');
 		$this->load->view('admin/partial/sidebar');
 		$this->load->view('admin/partial/breadcrumb',$data);
 		$this->load->view('admin/v_artikel',$data);
-		$this->load->view('admin/partial/footer');
+		$this->load->view('admin/partial/footer',$data);
 	}
 
 	public function tulis()

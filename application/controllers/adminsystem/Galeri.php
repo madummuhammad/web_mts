@@ -26,4 +26,14 @@ class Galeri extends CI_Controller {
 	{
 		$this->M_Galeri->tambah();
 	}
+
+	public function edit()
+	{
+		$this->M_Galeri->edit();
+	}
+
+	public function hapus()
+	{
+		$this->M_Galeri->hapus();
+	}
 }

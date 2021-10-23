@@ -77,6 +77,11 @@ class M_Artikel extends CI_Model {
 	public function hapus()
 	{
 		$id_artikel=$this->input->post('id_artikel');
+
+		$this->db->where('id_artikel',$id_artikel);
+		$gambar_lama=$this->db->get('artikel')->row_array();
+		unlink(FCPATH . 'assets/images/upload/artikel/'.$gambar_lama['gambar']);
+		
 		$this->db->where('id_artikel',$id_artikel);
 		$this->db->delete('artikel');
 	}

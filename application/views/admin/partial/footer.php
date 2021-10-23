@@ -57,6 +57,10 @@
         <script src="<?php echo base_url('assets/admin')?>/vendor/select2/js/select2.full.min.js"></script>
         <script src="<?php echo base_url('assets/admin')?>/js/plugins-init/select2-init.js"></script>
         <!-- End of select -->
+
+        <!-- My script -->
+        <script src="<?php echo base_url('assets/admin')?>/js/script.js"></script>
+        <!-- End of my script -->
         <script>
             $("#btn-logout").on('click',function(){
                 $.ajax({
@@ -160,33 +164,15 @@
                     }
                 });
             });
-            // Edit artikel
-
             // End of edit artikel
 
-            $(document).on("click", "#pilih_gambar", function() {
-                var file = $(this).parents().find(".file");
-                file.trigger("click");
-            });
 
-            $('input[type="file"]').change(function(e) {
-                var fileName = e.target.files[0].name;
-                $("#file").val(fileName);
-
-                var reader = new FileReader();
-                reader.onload = function(e) {
-        // get loaded data and render thumbnail.
-        document.getElementById("preview").src = e.target.result;
-    };
-    // read the image file as a data URL.
-    reader.readAsDataURL(this.files[0]);
-});
 
 // Hapus Artikel
 
-var button_modal = $("[data-toggle=hapus-artikel]");
-for (let i = 0; i < button_modal.length; i++) {
-    button_modal[i].onclick = function () {
+var button_hapus_artikel = $("[data-toggle=hapus-artikel]");
+for (let i = 0; i < button_hapus_artikel.length; i++) {
+    button_hapus_artikel[i].onclick = function () {
         var id_artikel=$(this).data('id');
         Swal.fire({
             title: 'Hapus data ini?',
@@ -197,23 +183,25 @@ for (let i = 0; i < button_modal.length; i++) {
             cancelButtonColor: '#d33',
             confirmButtonText: 'Ya, hapus!'
         }).then((result) => {
-            $.ajax({
-                url: "<?php echo base_url('adminsystem/artikel/hapus') ?>",
-                type:'POST',
-                data:{
-                    id_artikel:id_artikel
-                },
-                success: function(data){
-                    Swal.fire(
-                        'Terhapus!',
-                        'Data artikel berhasil dihapus.',
-                        'success'
-                        );
-                    setTimeout(function (){
-                        window.location.href="<?php echo base_url('adminsystem/artikel') ?>";
-                    }, 1000);
-                },
-            });
+            if (result.value ==true) {
+                $.ajax({
+                    url: "<?php echo base_url('adminsystem/artikel/hapus') ?>",
+                    type:'POST',
+                    data:{
+                        id_artikel:id_artikel
+                    },
+                    success: function(data){
+                        Swal.fire(
+                            'Terhapus!',
+                            'Data artikel berhasil dihapus.',
+                            'success'
+                            );
+                        setTimeout(function (){
+                            window.location.href="<?php echo base_url('adminsystem/artikel') ?>";
+                        }, 1000);
+                    },
+                });
+            }
         })
 
     }
@@ -521,23 +509,25 @@ for (let i = 0; i < button_modal.length; i++) {
             cancelButtonColor: '#d33',
             confirmButtonText: 'Ya, hapus!'
         }).then((result) => {
-            $.ajax({
-                url: "<?php echo base_url('adminsystem/profile_madrasah/hapus_ruang_gedung') ?>",
-                type:'POST',
-                data:{
-                    id:id
-                },
-                success: function(data){
-                    Swal.fire(
-                        'Terhapus!',
-                        'Data artikel berhasil dihapus.',
-                        'success'
-                        );
-                    setTimeout(function (){
-                        window.location.href="<?php echo base_url('adminsystem/profile_madrasah/ruang_gedung') ?>";
-                    }, 1000);
-                },
-            });
+            if (result.value ==true) {
+                $.ajax({
+                    url: "<?php echo base_url('adminsystem/profile_madrasah/hapus_ruang_gedung') ?>",
+                    type:'POST',
+                    data:{
+                        id:id
+                    },
+                    success: function(data){
+                        Swal.fire(
+                            'Terhapus!',
+                            'Data artikel berhasil dihapus.',
+                            'success'
+                            );
+                        setTimeout(function (){
+                            window.location.href="<?php echo base_url('adminsystem/profile_madrasah/ruang_gedung') ?>";
+                        }, 1000);
+                    },
+                });
+            }
         })
 
     }
@@ -644,23 +634,25 @@ for (let i = 0; i < btn_hapus_ketenagaan.length; i++) {
             cancelButtonColor: '#d33',
             confirmButtonText: 'Ya, hapus!'
         }).then((result) => {
-            $.ajax({
-                url: "<?php echo base_url('adminsystem/ketenagaan/hapus') ?>",
-                type:'POST',
-                data:{
-                    id:id
-                },
-                success: function(data){
-                    Swal.fire(
-                        'Terhapus!',
-                        'Data artikel berhasil dihapus.',
-                        'success'
-                        );
-                    setTimeout(function (){
-                        window.location.href="<?php echo base_url('adminsystem/ketenagaan') ?>";
-                    }, 1000);
-                },
-            });
+            if (result.value==true) {
+                $.ajax({
+                    url: "<?php echo base_url('adminsystem/ketenagaan/hapus') ?>",
+                    type:'POST',
+                    data:{
+                        id:id
+                    },
+                    success: function(data){
+                        Swal.fire(
+                            'Terhapus!',
+                            'Data artikel berhasil dihapus.',
+                            'success'
+                            );
+                        setTimeout(function (){
+                            window.location.href="<?php echo base_url('adminsystem/ketenagaan') ?>";
+                        }, 1000);
+                    },
+                });
+            }
         })
     }
 }
@@ -775,23 +767,25 @@ for (let i = 0; i < btn_hapus_kesiswaan.length; i++) {
             cancelButtonColor: '#d33',
             confirmButtonText: 'Ya, hapus!'
         }).then((result) => {
-            $.ajax({
-                url: "<?php echo base_url('adminsystem/kesiswaan/hapus') ?>",
-                type:'POST',
-                data:{
-                    id:id
-                },
-                success: function(data){
-                    Swal.fire(
-                        'Terhapus!',
-                        'Data artikel berhasil dihapus.',
-                        'success'
-                        );
-                    setTimeout(function (){
-                        window.location.href="<?php echo base_url('adminsystem/kesiswaan') ?>";
-                    }, 1000);
-                },
-            });
+            if (result.value==true) {
+                $.ajax({
+                    url: "<?php echo base_url('adminsystem/kesiswaan/hapus') ?>",
+                    type:'POST',
+                    data:{
+                        id:id
+                    },
+                    success: function(data){
+                        Swal.fire(
+                            'Terhapus!',
+                            'Data artikel berhasil dihapus.',
+                            'success'
+                            );
+                        setTimeout(function (){
+                            window.location.href="<?php echo base_url('adminsystem/kesiswaan') ?>";
+                        }, 1000);
+                    },
+                });
+            }
         })
     }
 }
@@ -891,23 +885,25 @@ for (let i = 0; i < btn_hapus_ekskul.length; i++) {
             cancelButtonColor: '#d33',
             confirmButtonText: 'Ya, hapus!'
         }).then((result) => {
-            $.ajax({
-                url: "<?php echo base_url('adminsystem/ekskul/hapus') ?>",
-                type:'POST',
-                data:{
-                    id:id
-                },
-                success: function(data){
-                    Swal.fire(
-                        'Terhapus!',
-                        'Data artikel berhasil dihapus.',
-                        'success'
-                        );
-                    setTimeout(function (){
-                        window.location.href="<?php echo base_url('adminsystem/ekskul') ?>";
-                    }, 1000);
-                },
-            });
+            if (result.value==true) {
+                $.ajax({
+                    url: "<?php echo base_url('adminsystem/ekskul/hapus') ?>",
+                    type:'POST',
+                    data:{
+                        id:id
+                    },
+                    success: function(data){
+                        Swal.fire(
+                            'Terhapus!',
+                            'Data artikel berhasil dihapus.',
+                            'success'
+                            );
+                        setTimeout(function (){
+                            window.location.href="<?php echo base_url('adminsystem/ekskul') ?>";
+                        }, 1000);
+                    },
+                });
+            }
         })
     }
 }
@@ -1007,23 +1003,25 @@ for (let i = 0; i < btn_hapus_prestasi.length; i++) {
             cancelButtonColor: '#d33',
             confirmButtonText: 'Ya, hapus!'
         }).then((result) => {
-            $.ajax({
-                url: "<?php echo base_url('adminsystem/prestasi/hapus') ?>",
-                type:'POST',
-                data:{
-                    id:id
-                },
-                success: function(data){
-                    Swal.fire(
-                        'Terhapus!',
-                        'Data prestasi berhasil dihapus.',
-                        'success'
-                        );
-                    setTimeout(function (){
-                        window.location.href="<?php echo base_url('adminsystem/prestasi') ?>";
-                    }, 1000);
-                },
-            });
+            if (result.value==true) {
+                $.ajax({
+                    url: "<?php echo base_url('adminsystem/prestasi/hapus') ?>",
+                    type:'POST',
+                    data:{
+                        id:id
+                    },
+                    success: function(data){
+                        Swal.fire(
+                            'Terhapus!',
+                            'Data prestasi berhasil dihapus.',
+                            'success'
+                            );
+                        setTimeout(function (){
+                            window.location.href="<?php echo base_url('adminsystem/prestasi') ?>";
+                        }, 1000);
+                    },
+                });
+            }
         })
     }
 }
@@ -1037,38 +1035,123 @@ $("#submit-tambah-galeri").on('click',function(){
     formData.append('gambar-galeri', fileupload);
     formData.append('tagline', $('#tagline').val());
 
-    // $.ajax({
-    //     type: 'POST',
-    //     url: "<?= base_url('adminsystem/galeri/tambah') ?>",
-    //     data: formData,
-    //     cache: false,
-    //     processData: false,
-    //     contentType: false,
-    //     success: function (msg) {
-    //         Swal({
-    //             title: "Galeri Berhasil Ditambah",
-    //             text: "Mohon tunggu sebentar",
-    //             type:'success',
-    //             timer: 2e3, showConfirmButton: !1 
-    //         });
-    //         setTimeout(function (){
-    //             window.location.href="<?php echo base_url('adminsystem/galeri') ?>";
-    //         }, 1000);
-    //     },
-    //     error: function () {
-    //         Swal({
-    //             title: "Galeri Gagal Dikirim",
-    //             text: "Isi form dengan benar",
-    //             type:'warning',
-    //             timer: 3e3, showConfirmButton: !1 
-    //         });
-    //         setTimeout(function (){
-    //             window.location.href="<?php echo base_url('adminsystem/galeri') ?>";
-    //         }, 1000);
-    //     }
-    // });
+    $.ajax({
+        type: 'POST',
+        url: "<?= base_url('adminsystem/galeri/tambah') ?>",
+        data: formData,
+        cache: false,
+        processData: false,
+        contentType: false,
+        success: function (msg) {
+            Swal({
+                title: "Galeri Berhasil Ditambah",
+                text: "Mohon tunggu sebentar",
+                type:'success',
+                timer: 2e3, showConfirmButton: !1 
+            });
+            setTimeout(function (){
+                window.location.href="<?php echo base_url('adminsystem/galeri') ?>";
+            }, 1000);
+        },
+        error: function () {
+            Swal({
+                title: "Galeri Gagal Dikirim",
+                text: "Isi form dengan benar",
+                type:'warning',
+                timer: 3e3, showConfirmButton: !1 
+            });
+            setTimeout(function (){
+                window.location.href="<?php echo base_url('adminsystem/galeri') ?>";
+            }, 1000);
+        }
+    });
 });
 // End of tambah galeri
+
+// hapus galeri
+var btn_hapus_galeri = $("[data-toggle=btn-hapus-galeri]");
+for (let i = 0; i < btn_hapus_galeri.length; i++) {
+    btn_hapus_galeri[i].onclick = function () {
+        var id=$(this).data('id');
+        Swal.fire({
+            title: 'Hapus data ini?',
+            text: "Data yang sudah di hapus tidak akan bisa dikembalikan!",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Ya, hapus!'
+        }).then((result) => {
+            if (result.value == true) {
+
+                $.ajax({
+                    url: "<?php echo base_url('adminsystem/galeri/hapus') ?>",
+                    type:'POST',
+                    data:{
+                        id:id
+                    },
+                    success: function(data){
+                        Swal.fire(
+                            'Terhapus!',
+                            'Gambar galeri berhasil dihapus.',
+                            'success'
+                            );
+                        setTimeout(function (){
+                            window.location.href="<?php echo base_url('adminsystem/galeri') ?>";
+                        }, 1000);
+                    },
+                });
+            }
+        })
+    }
+}
+// End of hapus galeri
+
+// Edit galeri
+var btn_edit_galeri = $("[data-toggle=btn-edit-galeri]");
+for (let i = 0; i < btn_edit_galeri.length; i++) {
+    btn_edit_galeri[i].onclick = function () {
+        var id=$(this).data('id');
+        const fileupload = $(`#gambar-galeri`+id).prop('files')[0];
+
+        let formData = new FormData();
+        formData.append('gambar-galeri', fileupload);
+        formData.append('tagline', $(`#tagline`+id).val());
+        formData.append('id',id);
+
+        $.ajax({
+            type:'POST',
+            url: "<?php echo base_url('adminsystem/galeri/edit') ?>",
+            data: formData,
+            cache: false,
+            processData: false,
+            contentType: false,
+            success: function (msg) {
+                Swal({
+                    title: "Gamber Galeri Berhasil Diedit",
+                    text: "Mohon tunggu sebentar",
+                    type:'success',
+                    timer: 2e3, showConfirmButton: !1 
+                });
+                setTimeout(function (){
+                    window.location.href="<?php echo base_url('adminsystem/galeri') ?>";
+                }, 1000);
+            },
+            error: function () {
+                Swal({
+                    title: "Gamber Galeri Gagal Diedit",
+                    text: "Isi form dengan benar",
+                    type:'warning',
+                    timer: 3e3, showConfirmButton: !1 
+                });
+                setTimeout(function (){
+                    window.location.href="<?php echo base_url('adminsystem/galeri') ?>";
+                }, 1000);
+            }
+        });
+    }
+}
+// End of edit galeri
 </script>
 
 
