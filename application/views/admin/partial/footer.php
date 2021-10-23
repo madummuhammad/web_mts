@@ -449,8 +449,8 @@ $("#submit-tambah-ruangan-gedung").on('click',function(){
 // edit ruangan dan gedung
 <?php 
 foreach ($ruang_gedung as $value) {
- ?>
- $("#submit-edit-ruangan-gedung<?= $value['id'] ?>").on('click',function(){
+   ?>
+   $("#submit-edit-ruangan-gedung<?= $value['id'] ?>").on('click',function(){
     var nama_bangunan=$("#edit_ruangan_gedung<?= $value['id'] ?> input[name=nama_bangunan]").val();
     var status_kepemilikan=$("#edit_ruangan_gedung<?= $value['id'] ?> select[name=status_kepemilikan]").val();
     var baik=$("#edit_ruangan_gedung<?= $value['id'] ?> input[name=kondisi_baik]").val();
@@ -1152,6 +1152,45 @@ for (let i = 0; i < btn_edit_galeri.length; i++) {
     }
 }
 // End of edit galeri
+
+// Hapus carousel
+var btn_hapus_carousel = $("[data-toggle=btn-hapus-carousel]");
+for (let i = 0; i < btn_hapus_carousel.length; i++) {
+    btn_hapus_carousel[i].onclick = function () {
+        var id=$(this).data('id');
+        Swal.fire({
+            title: 'Hapus data ini?',
+            text: "Data yang sudah di hapus tidak akan bisa dikembalikan!",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Ya, hapus!'
+        }).then((result) => {
+            if (result.value == true) {
+
+                $.ajax({
+                    url: "<?php echo base_url('adminsystem/carousel/hapus') ?>",
+                    type:'POST',
+                    data:{
+                        id:id
+                    },
+                    success: function(data){
+                        Swal.fire(
+                            'Terhapus!',
+                            'Gambar Carousel berhasil dihapus.',
+                            'success'
+                            );
+                        setTimeout(function (){
+                            window.location.href="<?php echo base_url('adminsystem/carousel') ?>";
+                        }, 1000);
+                    },
+                });
+            }
+        })
+    }
+}
+// End of hapus carousel
 </script>
 
 

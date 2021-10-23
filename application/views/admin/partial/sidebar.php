@@ -21,8 +21,8 @@
                   </li>
                   <li><a href="<?php echo base_url('adminsystem/galeri') ?>" aria-expanded="false"><i class="icon icon-single-copy-06"></i><span
                     class="nav-text">Galeri</span></a></li>
-                    <li><a href="widget-basic.html" aria-expanded="false"><i class="far fa-image"></i><span
-                        class="nav-text">Cover Web</span></a></li>
+                    <li><a href="<?php echo base_url('adminsystem/carousel') ?>" aria-expanded="false"><i class="far fa-image"></i><span
+                        class="nav-text">Gambar Carousel</span></a></li>
 
                         <li class="nav-label">Madrasah</li>
                         <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="icon icon-form"></i><span class="nav-text">Profil Madrasah</span></a>
