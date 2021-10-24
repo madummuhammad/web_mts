@@ -22,7 +22,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="button" id="submit-tambah-galeri" class="btn btn-primary">Tambah</button>
+                                                        <button type="button" id="submit-tambah-carousel" class="btn btn-primary">Tambah</button>
                                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                                     </div>
                                                 </div>
@@ -51,10 +51,10 @@
                                                     <?= 'active' ?>
                                                     <?php endif ?>">
                                                     <div class="btn-group d-flex justify-content-center">
-                                                        <a data-toggle="modal" data-target="#edit_galeri" class="badge badge-success btn-square text-white custom-btn"><i class="fas fa-pen-square"></i></a>
+                                                        <a data-toggle="modal" data-target="#edit_carousel<?= $value['id'] ?>" class="badge badge-success btn-square text-white custom-btn"><i class="fas fa-pen-square"></i></a>
                                                         <a data-toggle="btn-hapus-carousel" data-id="<?= $value['id'] ?>" class="badge badge-primary btn-square text-white custom-btn"><i class="fas fa-trash"></i></a>
                                                     </div>
-                                                    <img class="img-fluid" src="<?php echo base_url() ?>assets/images/upload/carousel1.jpg" alt="Los Angeles" width="1100" height="500">
+                                                    <img class="img-fluid" src="<?php echo base_url() ?>assets/images/upload/carousel/<?= $value['gambar'] ?>" alt="Los Angeles" width="1100" height="500">
                                                 </div>
                                             <?php endforeach ?>
 
@@ -67,6 +67,33 @@
                                             <span class="carousel-control-next-icon"></span>
                                         </a>
                                     </div>
+                                    <?php foreach ($carousel as $row => $value): ?>
+                                        <div class="modal fade" id="edit_carousel<?= $value['id'] ?>">
+                                            <form id="galeri">
+                                                <div class="modal-dialog modal-dialog-centered">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h4 class="modal-title">Tambah Gambar</h4>
+                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="form-group">
+                                                                <label for="gambar">Gambar</label>
+                                                                <input id="gambar-carousel<?= $value['id'] ?>" type="file" name="gambar-carousel" class="form-control">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <img height="300" width="300" src="<?php echo base_url() ?>assets/images/upload/carousel/<?= $value['gambar'] ?>" id="previe" data-toggle="thumb-edit-carousel" class="img-thumbnail">
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" data-toggle="btn-edit-carousel" data-id="<?= $value['id'] ?>" class="btn btn-primary">Simpan Perubahan</button>
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    <?php endforeach ?>
                                 </div>
                             </div>
                         </div>

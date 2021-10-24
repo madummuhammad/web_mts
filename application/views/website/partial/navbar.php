@@ -56,7 +56,7 @@
     							</div>
     							
     							<li class="nav-item">
-    								<a class="nav-link custom-hover-primary-text" href="pages/business.html">Guru dan TU</a>
+    								<a class="nav-link custom-hover-primary-text" href="<?= base_url('ketenagaan') ?>">Guru dan TU</a>
     							</li>
     							<li class="nav-item">
     								<a class="nav-link custom-hover-primary-text" href="pages/sports.html">Prestasi</a>

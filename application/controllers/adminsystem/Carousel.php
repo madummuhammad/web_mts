@@ -22,6 +22,16 @@ class Carousel extends CI_Controller {
 		$this->load->view('admin/partial/footer',$data);
 	}
 
+	public function tambah()
+	{
+		$this->M_Carousel->tambah();
+	}
+
+	public function edit()
+	{
+		$this->M_Carousel->edit();
+	}
+
 	public function hapus()
 	{
 		$this->M_Carousel->hapus();

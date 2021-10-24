@@ -16,3 +16,14 @@ $('input[type="file"]').change(function(e) {
 	};
 	reader.readAsDataURL(this.files[0]);
 });
+
+$('input[type="file"]').change(function(e) {
+	var reader = new FileReader();
+	reader.onload = function(e) {
+		var thumb_edit_carousel = $("[data-toggle=thumb-edit-carousel]");
+		for (let i = 0; i < thumb_edit_carousel.length; i++) {
+			thumb_edit_carousel[i].src = e.target.result;
+		}
+	};
+	reader.readAsDataURL(this.files[0]);
+});

@@ -8,32 +8,31 @@
 
 						<!-- Indicators -->
 						<ul class="carousel-indicators">
-							<li data-target="#demo" data-slide-to="0" class="active"></li>
-							<li data-target="#demo" data-slide-to="1"></li>
-							<li data-target="#demo" data-slide-to="2"></li>
+							<?php foreach ($carousel as $row => $value): ?>
+								<li data-target="#demo" data-slide-to="0" class="<?php if ($row == 0): ?>
+								<?= 'active' ?>
+								<?php endif ?>"></li>
+							<?php endforeach ?>
 						</ul>
-
 						<!-- The slideshow -->
 						<div class="carousel-inner">
-							<div class="carousel-item active">
-								<img class="img-fluid" src="<?php echo base_url() ?>assets/images/upload/carousel1.jpg" alt="Los Angeles" width="1100" height="500">
+							<?php foreach ($carousel as $row => $value): ?>
+								<div class="carousel-item <?php if ($row==0 ): ?>
+								<?= 'active' ?>
+								<?php endif ?>">
+								<img class="img-fluid" src="<?php echo base_url() ?>assets/images/upload/carousel/<?= $value['gambar'] ?>" alt="Los Angeles" width="1100" height="500">
 							</div>
-							<div class="carousel-item">
-								<img class="img-fluid" src="<?php echo base_url() ?>assets/images/upload/carousel1.jpg" alt="Los Angeles" width="1100" height="500">
-							</div>
-							<div class="carousel-item">
-								<img class="img-fluid" src="<?php echo base_url() ?>assets/images/upload/carousel1.jpg" alt="Los Angeles" width="1100" height="500">
-							</div>
-						</div>
+						<?php endforeach ?>
 
-						<!-- Left and right controls -->
-						<a class="carousel-control-prev" href="#demo" data-slide="prev">
-							<span class="carousel-control-prev-icon"></span>
-						</a>
-						<a class="carousel-control-next" href="#demo" data-slide="next">
-							<span class="carousel-control-next-icon"></span>
-						</a>
 					</div>
+					<!-- Left and right controls -->
+					<a class="carousel-control-prev" href="#demo" data-slide="prev">
+						<span class="carousel-control-prev-icon"></span>
+					</a>
+					<a class="carousel-control-next" href="#demo" data-slide="next">
+						<span class="carousel-control-next-icon"></span>
+					</a>
+				</div>
 <!-- 					<img
 					src="<?php echo base_url('') ?>assets/images/upload/carousel1.jpg"
 					alt="banner"
@@ -147,30 +146,25 @@
 							Galeri Kami
 						</div>
 						<div class="row">
-							<div class="col-sm-4 grid-margin">
-								<div class="position-relative">
-									<div class="rotate-img">
-										<img
-										src="<?php echo base_url('') ?>assets/images/upload/galeri/galeri1.jpg"
-										alt="thumb"
-										class="img-fluid"
-										/>
-									</div>
-									<div class="badge-positioned w-90">
-										<div
-										class="d-flex justify-content-between align-items-center"
-										>
-										<span
-										class="badge badge-danger font-weight-bold"
-										>Kunjungan Kerja</span
-										>
-										<!-- <div class="video-icon">
-											<i class="mdi mdi-play"></i>
-										</div> -->
+							<?php foreach ($galeri as $row => $value): ?>
+								<div class="col-sm-4 grid-margin">
+									<div class="position-relative">
+										<div class="rotate-img">
+											<img src="<?php echo base_url('') ?>assets/images/upload/galeri/<?= $value['gambar'] ?>" alt="thumb" class="img-fluid"/>
+										</div>
+										<div class="badge-positioned w-90">
+											<div
+											class="d-flex justify-content-between align-items-center"
+											>
+											<span
+											class="badge badge-danger font-weight-bold"
+											><?= $value['tagline'] ?></span
+											>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
+						<?php endforeach ?>
 					</div>
 				</div>
 			</div>

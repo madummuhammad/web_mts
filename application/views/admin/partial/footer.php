@@ -61,6 +61,11 @@
         <!-- My script -->
         <script src="<?php echo base_url('assets/admin')?>/js/script.js"></script>
         <!-- End of my script -->
+
+        <!-- Chart Morris plugin files -->
+        <script src="<?php echo base_url('assets/admin')?>/vendor/raphael/raphael.min.js"></script>
+        <script src="<?php echo base_url('assets/admin')?>/vendor/morris/morris.min.js"></script>
+        <script src="<?php echo base_url('assets/admin')?>/js/dashboard/dashboard-1.js"></script>
         <script>
             $("#btn-logout").on('click',function(){
                 $.ajax({
@@ -1153,6 +1158,46 @@ for (let i = 0; i < btn_edit_galeri.length; i++) {
 }
 // End of edit galeri
 
+// Tambah Carousel
+$("#submit-tambah-carousel").on('click',function(){
+    const fileupload = $('#gambar-carousel').prop('files')[0];
+
+    let formData = new FormData();
+    formData.append('gambar-carousel', fileupload);
+
+    $.ajax({
+        type: 'POST',
+        url: "<?= base_url('adminsystem/carousel/tambah') ?>",
+        data: formData,
+        cache: false,
+        processData: false,
+        contentType: false,
+        success: function (msg) {
+            Swal({
+                title: "Carousel Berhasil Ditambah",
+                text: "Mohon tunggu sebentar",
+                type:'success',
+                timer: 2e3, showConfirmButton: !1 
+            });
+            setTimeout(function (){
+                window.location.href="<?php echo base_url('adminsystem/carousel') ?>";
+            }, 1000);
+        },
+        error: function () {
+            Swal({
+                title: "Carousel Gagal Dikirim",
+                text: "Isi form dengan benar",
+                type:'warning',
+                timer: 3e3, showConfirmButton: !1 
+            });
+            setTimeout(function (){
+                window.location.href="<?php echo base_url('adminsystem/carousel') ?>";
+            }, 1000);
+        }
+    });
+});
+// End of carousel
+
 // Hapus carousel
 var btn_hapus_carousel = $("[data-toggle=btn-hapus-carousel]");
 for (let i = 0; i < btn_hapus_carousel.length; i++) {
@@ -1191,6 +1236,51 @@ for (let i = 0; i < btn_hapus_carousel.length; i++) {
     }
 }
 // End of hapus carousel
+
+// Edit carousel
+var btn_edit_carousel = $("[data-toggle=btn-edit-carousel]");
+for (let i = 0; i < btn_edit_carousel.length; i++) {
+    btn_edit_carousel[i].onclick = function () {
+        var id=$(this).data('id');
+        const fileupload = $(`#gambar-carousel`+id).prop('files')[0];
+
+        let formData = new FormData();
+        formData.append('gambar-carousel', fileupload);
+        formData.append('id',id);
+
+        $.ajax({
+            type:'POST',
+            url: "<?php echo base_url('adminsystem/carousel/edit') ?>",
+            data: formData,
+            cache: false,
+            processData: false,
+            contentType: false,
+            success: function (msg) {
+                Swal({
+                    title: "Gamber Galeri Berhasil Diedit",
+                    text: "Mohon tunggu sebentar",
+                    type:'success',
+                    timer: 2e3, showConfirmButton: !1 
+                });
+                setTimeout(function (){
+                    window.location.href="<?php echo base_url('adminsystem/carousel') ?>";
+                }, 1000);
+            },
+            error: function () {
+                Swal({
+                    title: "Gamber Galeri Gagal Diedit",
+                    text: "Isi form dengan benar",
+                    type:'warning',
+                    timer: 3e3, showConfirmButton: !1 
+                });
+                setTimeout(function (){
+                    window.location.href="<?php echo base_url('adminsystem/carousel') ?>";
+                }, 1000);
+            }
+        });
+    }
+}
+// End of edit carousel
 </script>
 
 

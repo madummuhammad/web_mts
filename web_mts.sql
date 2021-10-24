@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 23, 2021 at 12:19 AM
+-- Generation Time: Oct 24, 2021 at 03:57 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 7.4.22
 
@@ -61,9 +61,26 @@ CREATE TABLE `artikel` (
 --
 
 INSERT INTO `artikel` (`id_artikel`, `judul`, `isi`, `gambar`, `tanggal_upload`, `penulis`) VALUES
-(34, 'Proses Visit Akreditasi Secara Daring MTs Negeri 1 Tahun 20211', '                                    <p><span style=\"font-family: \"Century Gothic\", Tahoma, Arial, Helvetica, sans-serif; font-size: 17.3333px;\">Muara Bulian, MTsN1 (TIM Web)--- pelaksanaan akreditasi Madrasah secra daring di MTs Negeri 1 Batang Hari mulai dilaksanakan. Setelah menyiapkan dokumen yang diperlukan untuk persiapan akreditasi madrasah oleh TIM akreditasi MTsN 1 Batang Hari berupa file dokumen upload dan dokumen bukti fisik.</span><br style=\"box-sizing: inherit; margin: 0px; font-family: \"Century Gothic\", Tahoma, Arial, Helvetica, sans-serif; font-size: 17.3333px;\"><br style=\"box-sizing: inherit; margin: 0px; font-family: \"Century Gothic\", Tahoma, Arial, Helvetica, sans-serif; font-size: 17.3333px;\"><span style=\"font-family: \"Century Gothic\", Tahoma, Arial, Helvetica, sans-serif; font-size: 17.3333px;\">MTs Negeri 1 Batang Hari mendapatkan jadwal pada kelimpok 1 yang dimulai hari ini tanggal 14 sampai dengan tanggal 15 Oktober 2021. Pelaksanaan visit akreditasi tahun ini dilaksanakan secara daring oleh 2 orang asesor Bapak M. Nurzen.S dari Kerinci dan Ibu Nazpi dari Kota Sungai Penuh. Pelaksanaan akreditasi daring MTs Negeri 1 Batang Hari berlangsung diruang aula asrama MTs Negeri 1 Batang Hari yang dimulai dari jam 08.00 WIB sampai dengan jam 16.00 untuk hari pertama, acara dimulai dengan pembukaan kegiatan visitasi yang dipimpin oleh host dari anggota BAN-S/M Provinsi Jambi yang diawali dengan menyanyikan lagu kebangsaan Indonesia Raya, Pembacaan Do’a, Laporan pelaksanaan Visitasi daring, arahan ketua BAN-S/M dan penutup kemudian dilanjutkan dengan acara inti yang diawali dengan presentasi singkat Kepala Madrasah tentang rencana pengembangan Madrasah, sistem tata pamong Madrasah, sistem pengelolaan Madrasah dan capaian Madrasah yang disampaikan langsung oleh Kepala MTs Negeri 1 Batang Hari Bapak Erman, S.Pd.I, M.Pd secara lengkap dan terperinci.</span><br style=\"box-sizing: inherit; margin: 0px; font-family: \"Century Gothic\", Tahoma, Arial, Helvetica, sans-serif; font-size: 17.3333px;\"><br style=\"box-sizing: inherit; margin: 0px; font-family: \"Century Gothic\", Tahoma, Arial, Helvetica, sans-serif; font-size: 17.3333px;\"><span style=\"font-family: \"Century Gothic\", Tahoma, Arial, Helvetica, sans-serif; font-size: 17.3333px;\">Agenda Pelaksanaan visit hari ini dimulai dengan pertanyaan tim asesor kepada kepala madrasah, wakil kepala madrasah, kepala labor, kepala perpustakaan, ketua komite, kaur tata usaha serta guru dan masih banyak lainnya, untuk agenda Jum’at tanggal 15 oktober 2021 agenda yang akan dilaksanakan ialah metode observasi kelas, wawancara dan angket serta wawancara dan telaah dokumen yang akan dilaksanakan pada jam 07.15 s/d jam 16.30 sebagai kegiatan penutup akreditasi madrasah daring MTs Negeri 1 Batang Hari. Ucap Kepala MTs Negeri 1 Batang Hari Bapak Erman, S.Pd.I, M.Pd</span><br style=\"box-sizing: inherit; margin: 0px; font-family: \"Century Gothic\", Tahoma, Arial, Helvetica, sans-serif; font-size: 17.3333px;\"><br style=\"box-sizing: inherit; margin: 0px; font-family: \"Century Gothic\", Tahoma, Arial, Helvetica, sans-serif; font-size: 17.3333px;\"><span style=\"font-family: \"Century Gothic\", Tahoma, Arial, Helvetica, sans-serif; font-size: 17.3333px;\">Semoga kegiatan akreditasi daring di MTs Negeri 1 Batang Hari ini berjalan dengan lancar sesuai dengan yang diharapkan dan mendapatkan hasil yang diinginkan, terima kasih kepada seluruh tim akreditasi yang telah membantu berjalannya kegiatan hari ini dan tetap semangat untuk kegiatan esok, semoga MTs Negeri 1 mendapat hasil yang terbaik,, (RF)</span><br></p>                                ', 'artikel5.png', 'Thursday, 21 October 2021', 'admin'),
-(35, 'Proses Visit Akreditasi Secara Daring MTs Negeri 1 Tahun 20212', '                                    <p><span style=\"font-family: \"Century Gothic\", Tahoma, Arial, Helvetica, sans-serif; font-size: 17.3333px;\">Muara Bulian, MTsN1 (TIM Web)--- pelaksanaan akreditasi Madrasah secra daring di MTs Negeri 1 Batang Hari mulai dilaksanakan. Setelah menyiapkan dokumen yang diperlukan untuk persiapan akreditasi madrasah oleh TIM akreditasi MTsN 1 Batang Hari berupa file dokumen upload dan dokumen bukti fisik.</span><br style=\"box-sizing: inherit; margin: 0px; font-family: \"Century Gothic\", Tahoma, Arial, Helvetica, sans-serif; font-size: 17.3333px;\"><br style=\"box-sizing: inherit; margin: 0px; font-family: \"Century Gothic\", Tahoma, Arial, Helvetica, sans-serif; font-size: 17.3333px;\"><span style=\"font-family: \"Century Gothic\", Tahoma, Arial, Helvetica, sans-serif; font-size: 17.3333px;\">MTs Negeri 1 Batang Hari mendapatkan jadwal pada kelimpok 1 yang dimulai hari ini tanggal 14 sampai dengan tanggal 15 Oktober 2021. Pelaksanaan visit akreditasi tahun ini dilaksanakan secara daring oleh 2 orang asesor Bapak M. Nurzen.S dari Kerinci dan Ibu Nazpi dari Kota Sungai Penuh. Pelaksanaan akreditasi daring MTs Negeri 1 Batang Hari berlangsung diruang aula asrama MTs Negeri 1 Batang Hari yang dimulai dari jam 08.00 WIB sampai dengan jam 16.00 untuk hari pertama, acara dimulai dengan pembukaan kegiatan visitasi yang dipimpin oleh host dari anggota BAN-S/M Provinsi Jambi yang diawali dengan menyanyikan lagu kebangsaan Indonesia Raya, Pembacaan Do’a, Laporan pelaksanaan Visitasi daring, arahan ketua BAN-S/M dan penutup kemudian dilanjutkan dengan acara inti yang diawali dengan presentasi singkat Kepala Madrasah tentang rencana pengembangan Madrasah, sistem tata pamong Madrasah, sistem pengelolaan Madrasah dan capaian Madrasah yang disampaikan langsung oleh Kepala MTs Negeri 1 Batang Hari Bapak Erman, S.Pd.I, M.Pd secara lengkap dan terperinci.</span><br style=\"box-sizing: inherit; margin: 0px; font-family: \"Century Gothic\", Tahoma, Arial, Helvetica, sans-serif; font-size: 17.3333px;\"><br style=\"box-sizing: inherit; margin: 0px; font-family: \"Century Gothic\", Tahoma, Arial, Helvetica, sans-serif; font-size: 17.3333px;\"><span style=\"font-family: \"Century Gothic\", Tahoma, Arial, Helvetica, sans-serif; font-size: 17.3333px;\">Agenda Pelaksanaan visit hari ini dimulai dengan pertanyaan tim asesor kepada kepala madrasah, wakil kepala madrasah, kepala labor, kepala perpustakaan, ketua komite, kaur tata usaha serta guru dan masih banyak lainnya, untuk agenda Jum’at tanggal 15 oktober 2021 agenda yang akan dilaksanakan ialah metode observasi kelas, wawancara dan angket serta wawancara dan telaah dokumen yang akan dilaksanakan pada jam 07.15 s/d jam 16.30 sebagai kegiatan penutup akreditasi madrasah daring MTs Negeri 1 Batang Hari. Ucap Kepala MTs Negeri 1 Batang Hari Bapak Erman, S.Pd.I, M.Pd</span><br style=\"box-sizing: inherit; margin: 0px; font-family: \"Century Gothic\", Tahoma, Arial, Helvetica, sans-serif; font-size: 17.3333px;\"><br style=\"box-sizing: inherit; margin: 0px; font-family: \"Century Gothic\", Tahoma, Arial, Helvetica, sans-serif; font-size: 17.3333px;\"><span style=\"font-family: \"Century Gothic\", Tahoma, Arial, Helvetica, sans-serif; font-size: 17.3333px;\">Semoga kegiatan akreditasi daring di MTs Negeri 1 Batang Hari ini berjalan dengan lancar sesuai dengan yang diharapkan dan mendapatkan hasil yang diinginkan, terima kasih kepada seluruh tim akreditasi yang telah membantu berjalannya kegiatan hari ini dan tetap semangat untuk kegiatan esok, semoga MTs Negeri 1 mendapat hasil yang terbaik,, (RF)</span><br></p>                                ', 'artikel6.png', 'Thursday, 21 October 2021', 'admin'),
-(36, 'Proses Visit Akreditasi Secara Daring MTs Negeri 1 Tahun 20213', '                                    <p><span style=\"font-family: \"Century Gothic\", Tahoma, Arial, Helvetica, sans-serif; font-size: 17.3333px;\">Muara Bulian, MTsN1 (TIM Web)--- pelaksanaan akreditasi Madrasah secra daring di MTs Negeri 1 Batang Hari mulai dilaksanakan. Setelah menyiapkan dokumen yang diperlukan untuk persiapan akreditasi madrasah oleh TIM akreditasi MTsN 1 Batang Hari berupa file dokumen upload dan dokumen bukti fisik.</span><br style=\"box-sizing: inherit; margin: 0px; font-family: \"Century Gothic\", Tahoma, Arial, Helvetica, sans-serif; font-size: 17.3333px;\"><br style=\"box-sizing: inherit; margin: 0px; font-family: \"Century Gothic\", Tahoma, Arial, Helvetica, sans-serif; font-size: 17.3333px;\"><span style=\"font-family: \"Century Gothic\", Tahoma, Arial, Helvetica, sans-serif; font-size: 17.3333px;\">MTs Negeri 1 Batang Hari mendapatkan jadwal pada kelimpok 1 yang dimulai hari ini tanggal 14 sampai dengan tanggal 15 Oktober 2021. Pelaksanaan visit akreditasi tahun ini dilaksanakan secara daring oleh 2 orang asesor Bapak M. Nurzen.S dari Kerinci dan Ibu Nazpi dari Kota Sungai Penuh. Pelaksanaan akreditasi daring MTs Negeri 1 Batang Hari berlangsung diruang aula asrama MTs Negeri 1 Batang Hari yang dimulai dari jam 08.00 WIB sampai dengan jam 16.00 untuk hari pertama, acara dimulai dengan pembukaan kegiatan visitasi yang dipimpin oleh host dari anggota BAN-S/M Provinsi Jambi yang diawali dengan menyanyikan lagu kebangsaan Indonesia Raya, Pembacaan Do’a, Laporan pelaksanaan Visitasi daring, arahan ketua BAN-S/M dan penutup kemudian dilanjutkan dengan acara inti yang diawali dengan presentasi singkat Kepala Madrasah tentang rencana pengembangan Madrasah, sistem tata pamong Madrasah, sistem pengelolaan Madrasah dan capaian Madrasah yang disampaikan langsung oleh Kepala MTs Negeri 1 Batang Hari Bapak Erman, S.Pd.I, M.Pd secara lengkap dan terperinci.</span><br style=\"box-sizing: inherit; margin: 0px; font-family: \"Century Gothic\", Tahoma, Arial, Helvetica, sans-serif; font-size: 17.3333px;\"><br style=\"box-sizing: inherit; margin: 0px; font-family: \"Century Gothic\", Tahoma, Arial, Helvetica, sans-serif; font-size: 17.3333px;\"><span style=\"font-family: \"Century Gothic\", Tahoma, Arial, Helvetica, sans-serif; font-size: 17.3333px;\">Agenda Pelaksanaan visit hari ini dimulai dengan pertanyaan tim asesor kepada kepala madrasah, wakil kepala madrasah, kepala labor, kepala perpustakaan, ketua komite, kaur tata usaha serta guru dan masih banyak lainnya, untuk agenda Jum’at tanggal 15 oktober 2021 agenda yang akan dilaksanakan ialah metode observasi kelas, wawancara dan angket serta wawancara dan telaah dokumen yang akan dilaksanakan pada jam 07.15 s/d jam 16.30 sebagai kegiatan penutup akreditasi madrasah daring MTs Negeri 1 Batang Hari. Ucap Kepala MTs Negeri 1 Batang Hari Bapak Erman, S.Pd.I, M.Pd</span><br style=\"box-sizing: inherit; margin: 0px; font-family: \"Century Gothic\", Tahoma, Arial, Helvetica, sans-serif; font-size: 17.3333px;\"><br style=\"box-sizing: inherit; margin: 0px; font-family: \"Century Gothic\", Tahoma, Arial, Helvetica, sans-serif; font-size: 17.3333px;\"><span style=\"font-family: \"Century Gothic\", Tahoma, Arial, Helvetica, sans-serif; font-size: 17.3333px;\">Semoga kegiatan akreditasi daring di MTs Negeri 1 Batang Hari ini berjalan dengan lancar sesuai dengan yang diharapkan dan mendapatkan hasil yang diinginkan, terima kasih kepada seluruh tim akreditasi yang telah membantu berjalannya kegiatan hari ini dan tetap semangat untuk kegiatan esok, semoga MTs Negeri 1 mendapat hasil yang terbaik,, (RF)</span><br></p>                                ', 'artikel7.png', 'Thursday, 21 October 2021', 'admin');
+(34, 'Proses Visit Akreditasi Secara Daring MTs Negeri 1 Tahun 20211', '                                    <p><span style=\"font-family: \"Century Gothic\", Tahoma, Arial, Helvetica, sans-serif; font-size: 17.3333px;\">Muara Bulian, MTsN1 (TIM Web)--- pelaksanaan akreditasi Madrasah secra daring di MTs Negeri 1 Batang Hari mulai dilaksanakan. Setelah menyiapkan dokumen yang diperlukan untuk persiapan akreditasi madrasah oleh TIM akreditasi MTsN 1 Batang Hari berupa file dokumen upload dan dokumen bukti fisik.</span><br style=\"box-sizing: inherit; margin: 0px; font-family: \"Century Gothic\", Tahoma, Arial, Helvetica, sans-serif; font-size: 17.3333px;\"><br style=\"box-sizing: inherit; margin: 0px; font-family: \"Century Gothic\", Tahoma, Arial, Helvetica, sans-serif; font-size: 17.3333px;\"><span style=\"font-family: \"Century Gothic\", Tahoma, Arial, Helvetica, sans-serif; font-size: 17.3333px;\">MTs Negeri 1 Batang Hari mendapatkan jadwal pada kelimpok 1 yang dimulai hari ini tanggal 14 sampai dengan tanggal 15 Oktober 2021. Pelaksanaan visit akreditasi tahun ini dilaksanakan secara daring oleh 2 orang asesor Bapak M. Nurzen.S dari Kerinci dan Ibu Nazpi dari Kota Sungai Penuh. Pelaksanaan akreditasi daring MTs Negeri 1 Batang Hari berlangsung diruang aula asrama MTs Negeri 1 Batang Hari yang dimulai dari jam 08.00 WIB sampai dengan jam 16.00 untuk hari pertama, acara dimulai dengan pembukaan kegiatan visitasi yang dipimpin oleh host dari anggota BAN-S/M Provinsi Jambi yang diawali dengan menyanyikan lagu kebangsaan Indonesia Raya, Pembacaan Do’a, Laporan pelaksanaan Visitasi daring, arahan ketua BAN-S/M dan penutup kemudian dilanjutkan dengan acara inti yang diawali dengan presentasi singkat Kepala Madrasah tentang rencana pengembangan Madrasah, sistem tata pamong Madrasah, sistem pengelolaan Madrasah dan capaian Madrasah yang disampaikan langsung oleh Kepala MTs Negeri 1 Batang Hari Bapak Erman, S.Pd.I, M.Pd secara lengkap dan terperinci.</span><br style=\"box-sizing: inherit; margin: 0px; font-family: \"Century Gothic\", Tahoma, Arial, Helvetica, sans-serif; font-size: 17.3333px;\"><br style=\"box-sizing: inherit; margin: 0px; font-family: \"Century Gothic\", Tahoma, Arial, Helvetica, sans-serif; font-size: 17.3333px;\"><span style=\"font-family: \"Century Gothic\", Tahoma, Arial, Helvetica, sans-serif; font-size: 17.3333px;\">Agenda Pelaksanaan visit hari ini dimulai dengan pertanyaan tim asesor kepada kepala madrasah, wakil kepala madrasah, kepala labor, kepala perpustakaan, ketua komite, kaur tata usaha serta guru dan masih banyak lainnya, untuk agenda Jum’at tanggal 15 oktober 2021 agenda yang akan dilaksanakan ialah metode observasi kelas, wawancara dan angket serta wawancara dan telaah dokumen yang akan dilaksanakan pada jam 07.15 s/d jam 16.30 sebagai kegiatan penutup akreditasi madrasah daring MTs Negeri 1 Batang Hari. Ucap Kepala MTs Negeri 1 Batang Hari Bapak Erman, S.Pd.I, M.Pd</span><br style=\"box-sizing: inherit; margin: 0px; font-family: \"Century Gothic\", Tahoma, Arial, Helvetica, sans-serif; font-size: 17.3333px;\"><br style=\"box-sizing: inherit; margin: 0px; font-family: \"Century Gothic\", Tahoma, Arial, Helvetica, sans-serif; font-size: 17.3333px;\"><span style=\"font-family: \"Century Gothic\", Tahoma, Arial, Helvetica, sans-serif; font-size: 17.3333px;\">Semoga kegiatan akreditasi daring di MTs Negeri 1 Batang Hari ini berjalan dengan lancar sesuai dengan yang diharapkan dan mendapatkan hasil yang diinginkan, terima kasih kepada seluruh tim akreditasi yang telah membantu berjalannya kegiatan hari ini dan tetap semangat untuk kegiatan esok, semoga MTs Negeri 1 mendapat hasil yang terbaik,, (RF)</span><br></p>                                ', 'artikel5.png', 'Thursday, 21 October 2021', 'admin');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `carousel`
+--
+
+CREATE TABLE `carousel` (
+  `id` int(11) NOT NULL,
+  `gambar` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `carousel`
+--
+
+INSERT INTO `carousel` (`id`, `gambar`) VALUES
+(3, 'carousel2.png'),
+(4, 'carousel1.png');
 
 -- --------------------------------------------------------
 
@@ -86,8 +103,16 @@ CREATE TABLE `ekskul` (
 CREATE TABLE `galeri` (
   `id` int(11) NOT NULL,
   `tagline` varchar(50) NOT NULL,
-  `gambar` int(50) NOT NULL
+  `gambar` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `galeri`
+--
+
+INSERT INTO `galeri` (`id`, `tagline`, `gambar`) VALUES
+(18, 'a', 'galeri1.png'),
+(19, 'v', 'galeri2.png');
 
 -- --------------------------------------------------------
 
@@ -130,7 +155,7 @@ CREATE TABLE `ketenagaan` (
 
 INSERT INTO `ketenagaan` (`id`, `nama`, `status`, `keterangan`) VALUES
 (1, 'Abdul Gafur Kholidin, S.Pd.I', 'GTY', 'Kepala Madrasah / Guru Mapel Fiqih'),
-(2, 'Khusnul Kh, S.H, S.Pd', 'GTY', 'Guru Mapel PKN');
+(4, 'Khusnul Kh, S.H, S.Pd', 'GTY', 'Guru Mapel PKN');
 
 -- --------------------------------------------------------
 
@@ -266,6 +291,12 @@ ALTER TABLE `artikel`
   ADD PRIMARY KEY (`id_artikel`);
 
 --
+-- Indexes for table `carousel`
+--
+ALTER TABLE `carousel`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `ekskul`
 --
 ALTER TABLE `ekskul`
@@ -342,6 +373,12 @@ ALTER TABLE `artikel`
   MODIFY `id_artikel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
+-- AUTO_INCREMENT for table `carousel`
+--
+ALTER TABLE `carousel`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `ekskul`
 --
 ALTER TABLE `ekskul`
@@ -351,7 +388,7 @@ ALTER TABLE `ekskul`
 -- AUTO_INCREMENT for table `galeri`
 --
 ALTER TABLE `galeri`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `kesiswaan`
@@ -363,7 +400,7 @@ ALTER TABLE `kesiswaan`
 -- AUTO_INCREMENT for table `ketenagaan`
 --
 ALTER TABLE `ketenagaan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `non_bangunan`
