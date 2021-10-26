@@ -68,10 +68,10 @@
     								<a class="nav-link custom-hover-primary-text" href="<?= base_url('ekskul') ?>">Ekstra Kurikuler</a>
     							</li>
     							<li class="nav-item">
-    								<a class="nav-link custom-hover-primary-text" href="pages/travel.html">PPDB</a>
+    								<a class="nav-link custom-hover-primary-text" href="">PPDB</a>
     							</li>
     							<li class="nav-item">
-    								<a class="nav-link custom-hover-primary-text" href="pages/contactus.html">Hubungi Kami</a>
+    								<a class="nav-link custom-hover-primary-text" href="">Hubungi Kami</a>
     							</li>
     						</ul>
     					</div>
