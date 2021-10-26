@@ -10406,7 +10406,7 @@ header .navbar-bottom .navbar-toggler {
     padding-left: 0px;
   }
   .collapse {
-    background: #032a63;
+    /*background: #032a63;*/
     z-index: 99;
   }
   .navbar-collapse {
@@ -10439,9 +10439,9 @@ header .navbar-bottom .navbar-toggler {
   .navbar-collapse button {
     margin-bottom: 10px;
   }
-  .collapse:not(.show) {
+  /*.collapse:not(.show) {
     display: block;
-  }
+  }*/
   .show {
     right: 0;
   }

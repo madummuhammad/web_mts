@@ -107,7 +107,7 @@
 					<?php if ($row+1 >3): ?>
 						<div class="row">
 							<div class="col-sm-4 grid-margin">
-								<a href="">
+								<a href="<?= base_url('artikel/detil/').$value['id_artikel'] ?>">
 									<div class="position-relative">
 										<div class="rotate-img">
 											<img
@@ -120,7 +120,7 @@
 								</a>
 							</div>		
 							<div class="col-sm-8  grid-margin d-flex flex-column justify-items-center justify-content-center">
-								<a href="" class="text-decoration-none">
+								<a href="<?= base_url('artikel/detil/').$value['id_artikel'] ?>" class="text-decoration-none">
 									<h2 class="mb-2 font-weight-600 text-dark text-capitalize">
 										<?= $value['judul'] ?>
 									</h2>

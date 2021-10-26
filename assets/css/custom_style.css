@@ -54,6 +54,17 @@
 .footer-logo{
 	font-size: 35px;
 }
+.custom-collapse:not(.show) {
+  display: none;
+}
+@media (max-width: 999px) {
+	.navbar-collapse button {
+		margin-bottom: 10px;
+	}
+  .custom-collapse:not(.show) {
+    display: block;
+    }
+}
 @media (max-width: 576px) {
 	.navbar-collapse{
 		background-color: #069758 !important;

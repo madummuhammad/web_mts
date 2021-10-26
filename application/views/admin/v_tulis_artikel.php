@@ -8,7 +8,7 @@
                                 <form id="artikel">
                                    <div class="form-group">
                                     <label for="pwd">Judul Artikel</label>
-                                    <input type="text" name="tagline" id="tagline" class="form-control" placeholder="Masukan Judul Artikel" id="pwd">
+                                    <input type="text" name="tagline" id="judul" class="form-control" placeholder="Masukan Judul Artikel" autocomplete="off">
                                 </div>
                                 <div class="form-group">
                                     <label for="gambar">Gambar Cover</label>

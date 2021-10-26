@@ -27,12 +27,13 @@ class Artikel extends CI_Controller {
 	{
 		$data['user']=$this->session->userdata();
 		$data['title']='Tulis Artikel';
+		$data['ruang_gedung']=$this->M_Profile->tampil_ruang_gedung();
 		$this->load->view('admin/partial/header');
 		$this->load->view('admin/partial/topbar');
 		$this->load->view('admin/partial/sidebar');
 		$this->load->view('admin/partial/breadcrumb',$data);
 		$this->load->view('admin/v_tulis_artikel');
-		$this->load->view('admin/partial/footer');
+		$this->load->view('admin/partial/footer',$data);
 	}
 
 	public function add_artikel()
@@ -45,12 +46,13 @@ class Artikel extends CI_Controller {
 		$data['user']=$this->session->userdata();
 		$data['title']='Edit Artikel';
 		$data['artikel']=$this->M_Artikel->tampil_spesifik_artikel();
+		$data['ruang_gedung']=$this->M_Profile->tampil_ruang_gedung();
 		$this->load->view('admin/partial/header');
 		$this->load->view('admin/partial/topbar');
 		$this->load->view('admin/partial/sidebar');
 		$this->load->view('admin/partial/breadcrumb',$data);
 		$this->load->view('admin/v_edit_artikel',$data);
-		$this->load->view('admin/partial/footer');
+		$this->load->view('admin/partial/footer',$data);
 	}
 
 	public function update()

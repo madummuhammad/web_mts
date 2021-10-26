@@ -26,6 +26,13 @@ class M_Auth extends CI_Model {
 		}
 	}
 
+	public function tampil_profile()
+	{
+		$id_admin=$this->session->userdata('id_admin');
+		$this->db->where('id_admin',$id_admin);
+		return $this->db->get('admin')->row_array();
+	}
+
 	public function logout()
 	{
 		session_destroy();

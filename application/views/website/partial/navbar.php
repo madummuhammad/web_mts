@@ -24,7 +24,7 @@
     								<span class="navbar-toggler-icon"></span>
     							</button>
     							<div
-    							class="navbar-collapse justify-content-center collapse"
+    							class="navbar-collapse justify-content-center collapse custom-collapse"
     							id="navbarSupportedContent"
     							>
     							<ul
@@ -59,13 +59,13 @@
     								<a class="nav-link custom-hover-primary-text" href="<?= base_url('ketenagaan') ?>">Guru dan TU</a>
     							</li>
     							<li class="nav-item">
-    								<a class="nav-link custom-hover-primary-text" href="pages/sports.html">Prestasi</a>
+    								<a class="nav-link custom-hover-primary-text" href="<?= base_url('prestasi') ?>">Prestasi</a>
     							</li>
     							<li class="nav-item">
-    								<a class="nav-link custom-hover-primary-text" href="pages/art.html">Artikel</a>
+    								<a class="nav-link custom-hover-primary-text" href="<?= base_url('artikel') ?>">Artikel</a>
     							</li>
     							<li class="nav-item">
-    								<a class="nav-link custom-hover-primary-text" href="pages/politics.html">Ekstra Kurikuler</a>
+    								<a class="nav-link custom-hover-primary-text" href="<?= base_url('ekskul') ?>">Ekstra Kurikuler</a>
     							</li>
     							<li class="nav-item">
     								<a class="nav-link custom-hover-primary-text" href="pages/travel.html">PPDB</a>

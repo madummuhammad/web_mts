@@ -24,13 +24,13 @@ $(function() {
 
   // navbar toggler script
   $(".navbar-toggler").on("click", function() {
-    $(".collapse").toggleClass("show");
+    $(".custom-collapse").toggleClass("show");
     $("body").toggleClass("layer-open");
     // $(header).toggleClass("sticky-not");
     $(".navbar-close").show();
   });
   $(".navbar-close").on("click", function() {
-    $(".collapse").toggleClass("show");
+    $(".custom-collapse").toggleClass("show");
     $(".navbar-close").hide();
     $("body").toggleClass("layer-open");
     // $(header).toggleClass("sticky-not");
