@@ -22,6 +22,11 @@ class Kesiswaan extends CI_Controller {
 		$this->load->view('admin/partial/footer',$data);
 	}
 
+	public function json_kesiswaan()
+	{
+		$this->M_Kesiswaan->json_kesiswaan();
+	}
+
 	public function tambah()
 	{
 		$this->M_Kesiswaan->tambah();
