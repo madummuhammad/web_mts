@@ -8,4 +8,12 @@ function is_logged_in()
 	}
 }
 
+function forbidden_role()
+{
+	$ci=get_instance();
+	if ($ci->session->userdata('role')==1) {
+		redirect('adminsystem');
+	}
+}
+
 ?>

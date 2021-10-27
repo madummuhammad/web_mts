@@ -7,7 +7,7 @@
             Nav header start
             ***********************************-->
             <div class="nav-header">
-                <a href="index.html" class="brand-logo d-flex align-items-center justify-content-center">
+                <a href="<?= base_url() ?>" class="brand-logo d-flex align-items-center justify-content-center">
                     <p class="text-center">MTs AT TAQWA</p>
                 </a>
 
