@@ -5,6 +5,15 @@ class M_Kesiswaan extends CI_Model {
 
 	public function tampil_kesiswaan()
 	{
+		return $this->data_kesiswaan();
+	}
+
+	public function json_kesiswaan()
+	{
+		echo json_encode($this->data_kesiswaan());
+	}
+	private function data_kesiswaan()
+	{
 		return $this->db->get('kesiswaan')->result_array();
 	}
 

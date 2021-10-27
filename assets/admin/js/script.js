@@ -27,3 +27,29 @@ $('input[type="file"]').change(function(e) {
 	};
 	reader.readAsDataURL(this.files[0]);
 });
+
+(function($) {
+	"use strict";
+    // Morris bar chart
+    $(document).ready(function(){
+    	$.ajax({
+    		url: "http://localhost/web_mts/adminsystem/kesiswaan/json_kesiswaan",
+    		type:'GET',
+    		dataType:'json',
+    		success: function(datas){
+    			Morris.Bar({
+    				element: 'chart-kesiswaan',
+    				data: datas,
+    				xkey: 'tahun',
+    				ykeys: ['vii', 'viii','ix'],
+    				labels: ['Kelas VII', 'Kelas VIII','Kelas IX'],
+    				barColors: ['#343957', '#5873FE','#6B51DF'],
+    				hideHover: 'auto',
+    				gridLineColor: '#eef0f2',
+    				resize: true
+    			});
+    		}
+    	});
+    });
+
+})(jQuery);

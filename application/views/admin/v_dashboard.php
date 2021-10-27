@@ -61,7 +61,7 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-xl-12 col-lg-8">
-                                        <div id="morris-bar-chart"></div>
+                                        <div id="chart-kesiswaan"></div>
                                     </div>
                                 </div>
                             </div>

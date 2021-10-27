@@ -58,14 +58,14 @@
         <script src="<?php echo base_url('assets/admin')?>/js/plugins-init/select2-init.js"></script>
         <!-- End of select -->
 
-        <!-- My script -->
-        <script src="<?php echo base_url('assets/admin')?>/js/script.js"></script>
-        <!-- End of my script -->
-
         <!-- Chart Morris plugin files -->
         <script src="<?php echo base_url('assets/admin')?>/vendor/raphael/raphael.min.js"></script>
         <script src="<?php echo base_url('assets/admin')?>/vendor/morris/morris.min.js"></script>
         <script src="<?php echo base_url('assets/admin')?>/js/dashboard/dashboard-1.js"></script>
+
+        <!-- My script -->
+        <script src="<?php echo base_url('assets/admin')?>/js/script.js"></script>
+        <!-- End of my script -->
         <script>
             $("#btn-logout").on('click',function(){
                 $.ajax({

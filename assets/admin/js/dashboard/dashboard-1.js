@@ -110,24 +110,24 @@
                 data: [45, 25, 20, 10],
                 borderWidth: 0,
                 backgroundColor: [
-                    "rgba(89, 59, 219, .9)",
-                    "rgba(89, 59, 219, .7)",
-                    "rgba(89, 59, 219, .5)",
-                    "rgba(89, 59, 219, .07)"
+                "rgba(89, 59, 219, .9)",
+                "rgba(89, 59, 219, .7)",
+                "rgba(89, 59, 219, .5)",
+                "rgba(89, 59, 219, .07)"
                 ],
                 hoverBackgroundColor: [
-                    "rgba(89, 59, 219, .9)",
-                    "rgba(89, 59, 219, .7)",
-                    "rgba(89, 59, 219, .5)",
-                    "rgba(89, 59, 219, .07)"
+                "rgba(89, 59, 219, .9)",
+                "rgba(89, 59, 219, .7)",
+                "rgba(89, 59, 219, .5)",
+                "rgba(89, 59, 219, .07)"
                 ]
 
             }],
             labels: [
-                "one",
-                "two",
-                "three",
-                "four"
+            "one",
+            "two",
+            "three",
+            "four"
             ]
         },
         options: {
@@ -145,7 +145,7 @@
     "use strict";
 
     var data = [],
-        totalPoints = 300;
+    totalPoints = 300;
 
     function getRandomData() {
 
@@ -157,7 +157,7 @@
         while (data.length < totalPoints) {
 
             var prev = data.length > 0 ? data[data.length - 1] : 50,
-                y = prev + Math.random() * 10 - 5;
+            y = prev + Math.random() * 10 - 5;
 
             if (y < 0) {
                 y = 0;
