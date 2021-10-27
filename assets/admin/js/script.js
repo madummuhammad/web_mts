@@ -33,7 +33,7 @@ $('input[type="file"]').change(function(e) {
     // Morris bar chart
     $(document).ready(function(){
     	$.ajax({
-    		url: "http://localhost/web_mts/adminsystem/kesiswaan/json_kesiswaan",
+    		url: "https://mtsattaqwajatingarang.sch.id/adminsystem/kesiswaan/json_kesiswaan",
     		type:'GET',
     		dataType:'json',
     		success: function(datas){
