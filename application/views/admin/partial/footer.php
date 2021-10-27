@@ -454,8 +454,8 @@ $("#submit-tambah-ruangan-gedung").on('click',function(){
 // edit ruangan dan gedung
 <?php 
 foreach ($ruang_gedung as $value) {
-   ?>
-   $("#submit-edit-ruangan-gedung<?= $value['id'] ?>").on('click',function(){
+ ?>
+ $("#submit-edit-ruangan-gedung<?= $value['id'] ?>").on('click',function(){
     var nama_bangunan=$("#edit_ruangan_gedung<?= $value['id'] ?> input[name=nama_bangunan]").val();
     var status_kepemilikan=$("#edit_ruangan_gedung<?= $value['id'] ?> select[name=status_kepemilikan]").val();
     var baik=$("#edit_ruangan_gedung<?= $value['id'] ?> input[name=kondisi_baik]").val();
@@ -1338,14 +1338,14 @@ $("#submit-ganti-sandi").on('click',function(){
         dataType:'json',
         success: function(data){
             if (data=='Gagal') {
-             Swal.fire({
+               Swal.fire({
                 icon:'error',
                 title: "Gagal Mengganti Sandi",
                 text: "Sandi Lama Salah",
                 type:'warning',
                 timer: 1e3, showConfirmButton: !1 
             });
-         } else {
+           } else {
             Swal({
                 title: "Sandi Berhasil Di Ubah",
                 text: "Mohon tunggu sebentar",
@@ -1362,6 +1362,83 @@ $("#submit-ganti-sandi").on('click',function(){
 });
 });
 // End of ganti sandi
+
+$("#submit-tambah-admin").on('click',function(){
+    var username=$("#tambah_admin input[name=username]").val();
+    var nama=$("#tambah_admin input[name=nama]").val();
+    var role=$("#tambah_admin select[name=role]").val();
+    var password=$("#tambah_admin input[name=password]").val();
+    $.ajax({
+        url: "<?php echo base_url('adminsystem/admin/tambah') ?>",
+        type:'POST',
+        data:{
+            username:username,
+            nama:nama,
+            role:role,
+            password:password
+        },
+        success: function(data){
+            Swal({
+                title: "Admin Berhasil Ditambah",
+                text: "Mohon tunggu sebentar",
+                type:'success',
+                timer: 2e3, showConfirmButton: !1 
+            });
+            setTimeout(function (){
+                window.location.href="<?php echo base_url('adminsystem/admin/admin') ?>";
+            }, 1000);
+        },
+        error: function () {
+            Swal({
+                title: "Admin Gagal Ditambah",
+                text: "Isi form dengan benar",
+                type:'warning',
+                timer: 3e3, showConfirmButton: !1 
+            });
+            setTimeout(function (){
+                window.location.href="<?php echo base_url('adminsystem/admin/admin') ?>";
+            }, 1000);
+        }
+    });
+});
+
+// Hapus Admin
+var btn_hapus_admin = $("[data-toggle=btn-hapus-admin]");
+for (let i = 0; i < btn_hapus_admin.length; i++) {
+    btn_hapus_admin[i].onclick = function () {
+        var id=$(this).data('id');
+        Swal.fire({
+            title: 'Hapus data ini?',
+            text: "Data yang sudah di hapus tidak akan bisa dikembalikan!",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Ya, hapus!'
+        }).then((result) => {
+            if (result.value == true) {
+                $.ajax({
+                    url: "<?php echo base_url('adminsystem/admin/hapus') ?>",
+                    type:'POST',
+                    data:{
+                        id:id
+                    },
+                    success: function(data){
+                        Swal.fire(
+                            'Terhapus!',
+                            'Gambar galeri berhasil dihapus.',
+                            'success'
+                            );
+                        setTimeout(function (){
+                            window.location.href="<?php echo base_url('adminsystem/admin/admin') ?>";
+                        }, 1000);
+                    },
+                });
+            }
+        })
+    }
+}
+// End of hapus admin
 </script>
 
 
