@@ -1281,6 +1281,87 @@ for (let i = 0; i < btn_edit_carousel.length; i++) {
     }
 }
 // End of edit carousel
+
+// Edit profile
+$("#submit-edit-profile").on('click',function(){
+    const fileupload = $('#gambar-profile').prop('files')[0];
+
+    let formData = new FormData();
+    formData.append('gambar-profile', fileupload);
+    formData.append('username', $('#about-me input[name=username]').val());
+    formData.append('nama', $('#about-me input[name=nama]').val());
+
+    $.ajax({
+        type: 'POST',
+        url: "<?= base_url('adminsystem/profile/edit_profile') ?>",
+        data: formData,
+        cache: false,
+        processData: false,
+        contentType: false,
+        success: function (msg) {
+            Swal({
+                title: "Profil Berhasil Diedit",
+                text: "Mohon tunggu sebentar",
+                type:'success',
+                timer: 2e3, showConfirmButton: !1 
+            });
+            setTimeout(function (){
+                window.location.href="<?php echo base_url('adminsystem/profile') ?>";
+            }, 1000);
+        },
+        error: function () {
+            Swal({
+                title: "Profil Gagal Diedit",
+                text: "Isi form dengan benar",
+                type:'warning',
+                timer: 3e3, showConfirmButton: !1 
+            });
+            // setTimeout(function (){
+            //     window.location.href="<?php echo base_url('adminsystem/profile') ?>";
+            // }, 1000);
+        }
+    });
+});
+// End of edit profile
+
+// Ganti sandi
+$("#submit-ganti-sandi").on('click',function(){
+    const password_lama=$("#profile-settings input[name=password_lama]").val();
+    const password_baru=$("#profile-settings input[name=password_baru]").val();
+    $.ajax({
+        url: "<?php echo base_url('adminsystem/profile/edit_sandi') ?>",
+        type:'POST',
+        data:{
+            password_lama:password_lama,
+            password_baru:password_baru
+        },
+        dataType:'json',
+        success: function(data){
+            if (data=='Gagal') {
+             Swal.fire({
+                icon:'error',
+                title: "Gagal Mengganti Sandi",
+                text: "Sandi Lama Salah",
+                type:'warning',
+                timer: 1e3, showConfirmButton: !1 
+            });
+         } else {
+            Swal({
+                title: "Sandi Berhasil Di Ubah",
+                text: "Mohon tunggu sebentar",
+                type:'success',
+                timer: 2e3, showConfirmButton: !1 
+            });
+            $("#profile-settings input[name=password_lama]").val('');
+            $("#profile-settings input[name=password_baru]").val('');
+            // setTimeout(function (){
+            //     window.location.href="<?php echo base_url('adminsystem/profile') ?>";
+            // }, 1000);
+        }
+    }
+});
+});
+// End of ganti sandi
 </script>
 
 
