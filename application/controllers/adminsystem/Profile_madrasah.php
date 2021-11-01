@@ -13,12 +13,13 @@ class Profile_madrasah extends CI_Controller {
 		$data['user']=$this->session->userdata();
 		$data['title']='Profile Madrasah';
 		$data['profile_madrasah']=$this->M_Profile->tampil_profile();
+		$data['ruang_gedung']=$this->M_Profile->tampil_ruang_gedung();
 		$this->load->view('admin/partial/header');
 		$this->load->view('admin/partial/topbar');
 		$this->load->view('admin/partial/sidebar');
 		$this->load->view('admin/partial/breadcrumb',$data);
 		$this->load->view('admin/v_profile_madrasah',$data);
-		$this->load->view('admin/partial/footer');
+		$this->load->view('admin/partial/footer',$data);
 	}
 
 	public function edit_profile()
@@ -31,12 +32,13 @@ class Profile_madrasah extends CI_Controller {
 		$data['user']=$this->session->userdata();
 		$data['title']='Visi dan Misi';
 		$data['visimisi']=$this->M_Profile->tampil_visimisi();
+		$data['ruang_gedung']=$this->M_Profile->tampil_ruang_gedung();
 		$this->load->view('admin/partial/header');
 		$this->load->view('admin/partial/topbar');
 		$this->load->view('admin/partial/sidebar');
 		$this->load->view('admin/partial/breadcrumb',$data);
 		$this->load->view('admin/v_visimisi',$data);
-		$this->load->view('admin/partial/footer');
+		$this->load->view('admin/partial/footer',$data);
 	}
 
 	public function edit_visi()

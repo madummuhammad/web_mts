@@ -224,6 +224,7 @@ $("#submit-edit-profile-madrasah").on('click',function(){
     var terakreditasi=$("#edit-profile-madrasah .tab-pane input[name=terakreditasi]").val();
     var nama_kepala=$("#edit-profile-madrasah .tab-pane input[name=nama_kepala]").val();
     var tmt=$("#edit-profile-madrasah .tab-pane input[name=tmt]").val();
+
     $.ajax({
         url: "<?php echo base_url('adminsystem/profile_madrasah/edit_profile') ?>",
         type:'POST',
@@ -240,7 +241,7 @@ $("#submit-edit-profile-madrasah").on('click',function(){
         },
         success: function(data){
             Swal({
-                title: "Artikel Berhasil Diedit",
+                title: "Profile Madrasah Berhasil Diedit",
                 text: "Mohon tunggu sebentar",
                 type:'success',
                 timer: 2e3, showConfirmButton: !1 
@@ -251,7 +252,7 @@ $("#submit-edit-profile-madrasah").on('click',function(){
         },
         error: function () {
             Swal({
-                title: "Artikel Gagal Diedit",
+                title: "Profile Madrasah Gagal Diedit",
                 text: "Isi form dengan benar",
                 type:'warning',
                 timer: 3e3, showConfirmButton: !1 
