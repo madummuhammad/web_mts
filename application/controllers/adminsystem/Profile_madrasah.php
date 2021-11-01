@@ -32,6 +32,7 @@ class Profile_madrasah extends CI_Controller {
 		$data['user']=$this->session->userdata();
 		$data['title']='Visi dan Misi';
 		$data['visimisi']=$this->M_Profile->tampil_visimisi();
+		$data['misi']=$this->M_Profile->tampil_misi();
 		$data['ruang_gedung']=$this->M_Profile->tampil_ruang_gedung();
 		$this->load->view('admin/partial/header');
 		$this->load->view('admin/partial/topbar');
@@ -39,6 +40,11 @@ class Profile_madrasah extends CI_Controller {
 		$this->load->view('admin/partial/breadcrumb',$data);
 		$this->load->view('admin/v_visimisi',$data);
 		$this->load->view('admin/partial/footer',$data);
+	}
+
+	public function tambah_misi()
+	{
+		$this->M_Profile->tambah_misi();
 	}
 
 	public function edit_visi()
@@ -49,6 +55,11 @@ class Profile_madrasah extends CI_Controller {
 	public function edit_misi()
 	{
 		$this->M_Profile->edit_misi();
+	}
+
+	public function hapus_misi()
+	{
+		$this->M_Profile->hapus_misi();
 	}
 
 	public function tanah_bangunan()
