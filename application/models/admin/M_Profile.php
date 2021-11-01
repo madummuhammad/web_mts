@@ -13,6 +13,11 @@ class M_Profile extends CI_Model {
 		return $this->db->get('visi_misi')->row_array();
 	}
 
+	public function tampil_misi()
+	{
+		return $this->db->get('misi')->result_array();
+	}
+
 	public function tampil_tanah_bangunan()
 	{
 		return $this->db->get('tanah_bangunan')->row_array();
@@ -52,6 +57,16 @@ class M_Profile extends CI_Model {
 
 	}
 
+	public function tambah_misi()
+	{
+		$misi=$this->input->post('misi');
+		$data=[
+			'misi'=>$misi
+		];
+		$this->db->insert('misi',$data);
+
+	}
+
 	public function edit_visi()
 	{
 		$visi=$this->input->post('visi');
@@ -65,13 +80,22 @@ class M_Profile extends CI_Model {
 
 	public function edit_misi()
 	{
+		$id=$this->input->post('id');
 		$misi=$this->input->post('misi');
 		$data=[
 			'misi'=>$misi
 		];
 
-		$this->db->where('id',1);
-		$this->db->update('visi_misi',$data);
+		$this->db->where('id',$id);
+		$this->db->update('misi',$data);
+	}
+
+	public function hapus_misi()
+	{
+		$id=$this->input->post('id');
+
+		$this->db->where('id',$id);
+		$this->db->delete('misi');
 	}
 
 	public function edit_tanah_bangunan()

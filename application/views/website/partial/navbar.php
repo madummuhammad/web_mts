@@ -47,7 +47,7 @@
     								<li class="nav-item">
     									<a class="nav-link custom-hover-primary-text dropdown-toggle" href="pages/magazine.html" data-toggle="dropdown">Profile</a>
     									<div class="dropdown-menu">
-    										<a class="dropdown-item" href="#">Profile Madrasah</a>
+    										<a class="dropdown-item" href="<?= base_url('profile') ?>">Profile Madrasah</a>
     										<a class="dropdown-item" href="#">Visi dan Misi</a>
     										<a class="dropdown-item" href="#">Sarana dan Prasarana</a>
     									</div>

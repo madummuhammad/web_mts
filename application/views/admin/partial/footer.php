@@ -224,6 +224,7 @@ $("#submit-edit-profile-madrasah").on('click',function(){
     var terakreditasi=$("#edit-profile-madrasah .tab-pane input[name=terakreditasi]").val();
     var nama_kepala=$("#edit-profile-madrasah .tab-pane input[name=nama_kepala]").val();
     var tmt=$("#edit-profile-madrasah .tab-pane input[name=tmt]").val();
+
     $.ajax({
         url: "<?php echo base_url('adminsystem/profile_madrasah/edit_profile') ?>",
         type:'POST',
@@ -240,7 +241,7 @@ $("#submit-edit-profile-madrasah").on('click',function(){
         },
         success: function(data){
             Swal({
-                title: "Artikel Berhasil Diedit",
+                title: "Profile Madrasah Berhasil Diedit",
                 text: "Mohon tunggu sebentar",
                 type:'success',
                 timer: 2e3, showConfirmButton: !1 
@@ -251,7 +252,7 @@ $("#submit-edit-profile-madrasah").on('click',function(){
         },
         error: function () {
             Swal({
-                title: "Artikel Gagal Diedit",
+                title: "Profile Madrasah Gagal Diedit",
                 text: "Isi form dengan benar",
                 type:'warning',
                 timer: 3e3, showConfirmButton: !1 
@@ -266,7 +267,7 @@ $("#submit-edit-profile-madrasah").on('click',function(){
 
 // Edit visi
 $("#submit-edit-visi").on('click',function(){
-    var visi=$("#visimisi input[name=visi]").val();
+    var visi=$("#visimisi textarea[name=visi]").val();
     $.ajax({
         url: "<?php echo base_url('adminsystem/profile_madrasah/edit_visi') ?>",
         type:'POST',
@@ -299,18 +300,18 @@ $("#submit-edit-visi").on('click',function(){
 });
 // End of edit visi
 
-// Edit misi
-$("#submit-edit-misi").on('click',function(){
-    var misi=$("#visimisi textarea[name=misi]").val();
+// Tambah Misi
+$("#submit-tambah-misi").on('click',function(){
+    var misi=$("#tambah-misi textarea[name=misi]").val();
     $.ajax({
-        url: "<?php echo base_url('adminsystem/profile_madrasah/edit_misi') ?>",
+        url: "<?php echo base_url('adminsystem/profile_madrasah/tambah_misi') ?>",
         type:'POST',
         data:{
             misi:misi,
         },
         success: function(data){
             Swal({
-                title: "Misi Berhasil Diedit",
+                title: "Misi Berhasil Ditambah",
                 text: "Mohon tunggu sebentar",
                 type:'success',
                 timer: 2e3, showConfirmButton: !1 
@@ -321,7 +322,7 @@ $("#submit-edit-misi").on('click',function(){
         },
         error: function () {
             Swal({
-                title: "Misi Gagal Diedit",
+                title: "Misi Gagal Ditambah",
                 text: "Isi form dengan benar",
                 type:'warning',
                 timer: 3e3, showConfirmButton: !1 
@@ -332,7 +333,88 @@ $("#submit-edit-misi").on('click',function(){
         }
     });
 });
+// End of tambah misi
+
+// Edit misi
+var button_edit_misi = $("[data-toggle=edit-misi]");
+for (let i = 0; i < button_edit_misi.length; i++) {
+    button_edit_misi[i].onclick = function () {
+        var id=$(this).data('id');
+        var misi=$("#edit-misi"+id+" textarea[name=misi]").val();
+        $.ajax({
+            url: "<?php echo base_url('adminsystem/profile_madrasah/edit_misi') ?>",
+            type:'POST',
+            data:{
+                id:id,
+                misi:misi
+            },
+            success: function(data){
+                Swal({
+                    title: "Misi Berhasil Diedit",
+                    text: "Mohon tunggu sebentar",
+                    type:'success',
+                    timer: 2e3, showConfirmButton: !1 
+                });
+                setTimeout(function (){
+                    window.location.href="<?php echo base_url('adminsystem/profile_madrasah/visi_misi') ?>";
+                }, 1000);
+            },
+            error: function () {
+                Swal({
+                    title: "Misi Gagal Diedit",
+                    text: "Isi form dengan benar",
+                    type:'warning',
+                    timer: 3e3, showConfirmButton: !1 
+                });
+                setTimeout(function (){
+                    window.location.href="<?php echo base_url('adminsystem/profile_madrasah/visi_misi') ?>";
+                }, 1000);
+            }
+        });
+
+    }
+}
 // End of edit misi
+
+// Hapus misi
+var button_hapus_misi = $("[data-toggle=hapus-misi]");
+for (let i = 0; i < button_hapus_misi.length; i++) {
+    button_hapus_misi[i].onclick = function () {
+        var id=$(this).data('id');
+        Swal.fire({
+            title: 'Hapus data ini?',
+            text: "Data yang sudah di hapus tidak akan bisa dikembalikan!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Ya, hapus!'
+        }).then((result) => {
+            if (result.value ==true) {
+                $.ajax({
+                    url: "<?php echo base_url('adminsystem/profile_madrasah/hapus_misi') ?>",
+                    type:'POST',
+                    data:{
+                        id:id
+                    },
+                    success: function(data){
+                        Swal.fire(
+                            'Terhapus!',
+                            'Data artikel berhasil dihapus.',
+                            'success'
+                            );
+                        setTimeout(function (){
+                            window.location.href="<?php echo base_url('adminsystem/profile_madrasah/visi_misi') ?>";
+                        }, 1000);
+                    },
+                });
+            }
+        })
+
+    }
+}
+
+// End of hapus misi
 
 // Tanah dan bangunan
 $("#submit-tanah-bangunan").on('click',function(){
@@ -454,8 +536,8 @@ $("#submit-tambah-ruangan-gedung").on('click',function(){
 // edit ruangan dan gedung
 <?php 
 foreach ($ruang_gedung as $value) {
- ?>
- $("#submit-edit-ruangan-gedung<?= $value['id'] ?>").on('click',function(){
+   ?>
+   $("#submit-edit-ruangan-gedung<?= $value['id'] ?>").on('click',function(){
     var nama_bangunan=$("#edit_ruangan_gedung<?= $value['id'] ?> input[name=nama_bangunan]").val();
     var status_kepemilikan=$("#edit_ruangan_gedung<?= $value['id'] ?> select[name=status_kepemilikan]").val();
     var baik=$("#edit_ruangan_gedung<?= $value['id'] ?> input[name=kondisi_baik]").val();
@@ -1338,14 +1420,14 @@ $("#submit-ganti-sandi").on('click',function(){
         dataType:'json',
         success: function(data){
             if (data=='Gagal') {
-               Swal.fire({
+             Swal.fire({
                 icon:'error',
                 title: "Gagal Mengganti Sandi",
                 text: "Sandi Lama Salah",
                 type:'warning',
                 timer: 1e3, showConfirmButton: !1 
             });
-           } else {
+         } else {
             Swal({
                 title: "Sandi Berhasil Di Ubah",
                 text: "Mohon tunggu sebentar",
